@@ -1,0 +1,52 @@
+﻿
+> fudosan-satei-mado@0.1.0 build
+> next build
+
+笆ｲ Next.js 16.1.1 (Turbopack)
+
+  Creating an optimized production build ...
+笨・Compiled successfully in 5.4s
+  Running TypeScript ...
+  Collecting page data using 15 workers ...
+  Generating static pages using 15 workers (0/63) ...
+node.exe : Error occurred pr
+erendering page "/area/ishik
+awa". Read more: https://nex
+tjs.org/docs/messages/preren
+der-error
+発生場所 行:1 文字:1
++ & "C:\Program Files\nodejs
+/node.exe" "C:\Program Files
+\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
+    + CategoryInfo          
+    : NotSpe    cified: (Err
+or o    ccurred ...prere    
+nder-error:Strin    g) [], R
+emoteExc    eption
+    + FullyQualified    Erro
+rId : Native    CommandError
+ 
+Error: Event handlers cannot
+ be passed to Client Compone
+nt props.
+  {onClick: function onClick
+, className: ..., children: 
+...}
+            ^^^^^^^^^^^^^^^^
+If you need interactivity, c
+onsider converting part of t
+his to a Client Component.
+    at stringify (<anonymous
+>) {
+  digest: '3663027088'
+}
+Export encountered an error 
+on /area/[prefectureSlug]/pa
+ge: /area/ishikawa, exiting 
+the build.
+筧ｯ Next.js build worker exit
+ed with code: 1 and signal: 
+null

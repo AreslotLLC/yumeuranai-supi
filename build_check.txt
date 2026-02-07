@@ -1,0 +1,47 @@
+﻿
+> fudosan-satei-mado@0.1.0 build
+> next build
+
+笆ｲ Next.js 16.1.1 (Turbopack)
+
+  Creating an optimized production build ...
+笨・Compiled successfully in 4.6s
+  Running TypeScript ...
+  Collecting page data using 15 workers ...
+  Generating static pages using 15 workers (0/63) ...
+  Generating static pages using 15 workers (15/63) 
+  Generating static pages using 15 workers (31/63) 
+  Generating static pages using 15 workers (47/63) 
+笨・Generating static pages using 15 workers (63/63) in 519.9ms
+  Finalizing page optimization ...
+
+Route (app)                            Revalidate  Expire
+笏・笳・/                                          1h      1y
+笏・笳・/_not-found
+笏・笳・/about
+笏・笳・/ad-disclosure
+笏・ﾆ・/api/og/[slug]
+笏・ﾆ・/api/revalidate
+笏・笳・/area/[prefectureSlug]                     1h      1y
+笏・笏・/area/hokkaido                             1h      1y
+笏・笏・/area/aomori                               1h      1y
+笏・笏・/area/iwate                                1h      1y
+笏・笏・[+44 more paths]
+笏・笳・/area/[prefectureSlug]/[citySlug]          1h      1y
+笏・笏・/area/osaka/osaka-shi                      1h      1y
+笏・笳・/disclaimer
+笏・笳・/guide
+笏・笳・/guide/[slug]                              1h      1y
+笏・笏・/guide/flow                                1h      1y
+笏・笏・/guide/choosing-company                    1h      1y
+笏・笳・/icon.svg
+笏・笳・/privacy-policy
+笏・笳・/robots.txt
+笏・ﾆ・/search
+笏・笳・/sitemap.xml
+
+
+笳・ (Static)   prerendered as static content
+笳・ (SSG)      prerendered as static HTML (uses generateStaticParams)
+ﾆ・ (Dynamic)  server-rendered on demand
+

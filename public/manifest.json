@@ -1,0 +1,21 @@
+{
+  "name": "夢占い.jp",
+  "short_name": "夢占い",
+  "description": "あなたの夢を解き明かす、日本最大級の夢占い・夢診断サイト",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,290 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-noto-sans-jp), sans-serif;
+  --font-serif: var(--font-noto-serif-jp), serif;
+  --font-mono: monospace;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --shadow-mystic: 0 12px 30px -10px oklch(0.4 0.2 280 / 12%), 0 4px 12px -5px oklch(0.4 0.2 280 / 8%);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.97 0.01 260);
+  /* Slightly darker for contrast */
+  --foreground: oklch(0.15 0.05 280);
+  /* Deep midnight purple for text */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.05 280);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.05 280);
+  --primary: oklch(0.4 0.2 280);
+  /* Deep Mystic Purple #6B21A8 relative */
+  --primary-foreground: oklch(0.98 0.01 260);
+  --secondary: oklch(0.92 0.04 280);
+  /* Soft Lavender */
+  --secondary-foreground: oklch(0.3 0.1 280);
+  --muted: oklch(0.95 0.02 280);
+  --muted-foreground: oklch(0.4 0.05 280);
+  --accent: oklch(0.75 0.18 80);
+  /* Golden Dream #EAB308 relative */
+  --accent-foreground: oklch(0.15 0.05 280);
+  --destructive: oklch(0.5 0.15 25);
+  --border: oklch(0.85 0.05 280);
+  /* Slightly darker for better contrast */
+  --input: oklch(0.85 0.05 280);
+  --ring: oklch(0.4 0.2 280);
+  --chart-1: oklch(0.4 0.2 280);
+  --chart-2: oklch(0.75 0.18 80);
+  --chart-3: oklch(0.5 0.15 280);
+  --chart-4: oklch(0.85 0.1 80);
+  --chart-5: oklch(0.6 0.1 280);
+  --sidebar: oklch(0.98 0.01 280);
+  --sidebar-foreground: oklch(0.15 0.05 280);
+  --sidebar-primary: oklch(0.4 0.2 280);
+  --sidebar-primary-foreground: oklch(0.98 0.01 280);
+  --sidebar-accent: oklch(0.92 0.04 280);
+  --sidebar-accent-foreground: oklch(0.4 0.2 280);
+  --sidebar-border: oklch(0.9 0.05 280);
+  --sidebar-ring: oklch(0.4 0.2 280);
+}
+
+.dark {
+  --background: oklch(0.12 0.04 280);
+  /* Midnight Purple - Night Sky */
+  --foreground: oklch(0.95 0.02 260);
+  --card: oklch(0.16 0.05 280);
+  --card-foreground: oklch(0.95 0.02 260);
+  --popover: oklch(0.16 0.05 280);
+  --popover-foreground: oklch(0.95 0.02 260);
+  --primary: oklch(0.6 0.15 280);
+  /* Lighter Purple for dark mode */
+  --primary-foreground: oklch(0.12 0.04 280);
+  --secondary: oklch(0.25 0.08 280);
+  --secondary-foreground: oklch(0.95 0.02 260);
+  --muted: oklch(0.25 0.08 280);
+  --muted-foreground: oklch(0.7 0.05 280);
+  --accent: oklch(0.75 0.18 80);
+  /* Bright Gold */
+  --accent-foreground: oklch(0.12 0.04 280);
+  --destructive: oklch(0.6 0.18 25);
+  --border: oklch(1 0 0 / 15%);
+  --input: oklch(1 0 0 / 18%);
+  --ring: oklch(0.6 0.15 280);
+  --chart-1: oklch(0.6 0.15 280);
+  --chart-2: oklch(0.75 0.18 80);
+  --chart-3: oklch(0.8 0.1 280);
+  --chart-4: oklch(0.6 0.2 80);
+  --chart-5: oklch(0.5 0.1 280);
+  --sidebar: oklch(0.16 0.05 280);
+  --sidebar-foreground: oklch(0.95 0.02 260);
+  --sidebar-primary: oklch(0.6 0.15 280);
+  --sidebar-primary-foreground: oklch(0.12 0.04 280);
+  --sidebar-accent: oklch(0.25 0.08 280);
+  --sidebar-accent-foreground: oklch(0.95 0.02 260);
+  --sidebar-border: oklch(1 0 0 / 15%);
+  --sidebar-ring: oklch(0.6 0.15 280);
+  --shadow-mystic: 0 10px 30px -5px oklch(0 0 0 / 40%), 0 5px 15px -5px oklch(0 0 0 / 20%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+  }
+
+  body {
+    @apply bg-background text-foreground font-serif;
+  }
+
+  /* UI elements should remain sans-serif for better readability at small sizes */
+  button,
+  input,
+  optgroup,
+  select,
+  textarea,
+  nav,
+  .font-sans {
+    font-family: var(--font-noto-sans-jp), sans-serif;
+  }
+
+  /* Titles and accent texts use serif */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .font-serif {
+    font-family: var(--font-noto-serif-jp), serif;
+  }
+}
+
+@layer utilities {
+  .mask-radial-fade {
+    mask-image: radial-gradient(circle, black 40%, transparent 80%);
+  }
+
+  .border-glass {
+    @apply border border-white/10 backdrop-blur-md;
+  }
+
+  /* Markdown Content Typography */
+  .markdown-content {
+    @apply text-slate-700 dark:text-slate-300 leading-[1.7] text-base md:text-lg;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .markdown-content h1 {
+    @apply text-2xl md:text-4xl font-black mt-16 md:mt-20 mb-8 md:mb-10 text-slate-900 dark:text-white leading-tight;
+  }
+
+  .markdown-content h2 {
+    @apply text-xl md:text-3xl font-black mt-12 md:mt-16 mb-6 md:mb-8 pb-3 md:pb-4 border-b-2 border-primary/10 flex items-center gap-3 md:gap-4 text-slate-900 dark:text-white tracking-tight leading-tight;
+  }
+
+  .markdown-content h2::before {
+    content: "";
+    @apply w-1.5 h-7 md:h-10 bg-gradient-to-b from-primary to-primary/40 rounded-full inline-block;
+  }
+
+  .markdown-content h3 {
+    @apply text-lg md:text-2xl font-black mt-8 md:mt-12 mb-4 md:mb-6 pl-4 md:pl-5 border-l-4 border-accent text-slate-800 dark:text-slate-100 leading-snug;
+  }
+
+  .markdown-content h4 {
+    @apply text-base md:text-xl font-bold mt-6 md:mt-8 mb-3 md:mb-4 text-slate-800 dark:text-slate-200;
+  }
+
+  .markdown-content p {
+    @apply mb-6;
+  }
+
+  .markdown-content strong {
+    @apply font-bold text-primary dark:text-accent bg-primary/5 dark:bg-accent/10 px-1.5 py-0.5 rounded;
+  }
+
+  .markdown-content ul {
+    @apply mb-6 space-y-4 list-none pl-2;
+  }
+
+  .markdown-content ul li {
+    @apply relative pl-8 before:absolute before:left-0 before:top-[0.7em] before:w-2 before:h-2 before:bg-primary before:rounded-full before:opacity-60;
+  }
+
+  .markdown-content ol {
+    @apply mb-6 space-y-4 list-decimal pl-8 text-primary font-bold;
+  }
+
+  .markdown-content ol li {
+    @apply text-slate-800 dark:text-slate-200 font-normal;
+  }
+
+  .markdown-content blockquote {
+    @apply my-8 p-8 md:p-10 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-sm italic text-slate-600 dark:text-slate-400;
+  }
+
+  .markdown-content hr {
+    @apply my-12 border-slate-100 dark:border-slate-800;
+  }
+
+  .markdown-content p a,
+  .markdown-content li a,
+  .markdown-content blockquote a {
+    @apply text-primary dark:text-accent border-b border-primary/30 dark:border-accent/30 hover:border-primary dark:hover:border-accent transition-colors font-bold;
+  }
+
+  /* Semantic Guide Cards - Responsive Flattening */
+  .guide-card {
+    @apply p-0 py-6 bg-transparent rounded-none border-b border-slate-100 dark:border-slate-800 shadow-none transition-all;
+  }
+
+  @screen md {
+    .guide-card {
+      @apply p-8 bg-white dark:bg-slate-900 rounded-[2.5rem] border-2 border-slate-200/80 dark:border-slate-800 shadow-mystic hover:shadow-xl hover:-translate-y-1;
+    }
+  }
+
+  .guide-card-lucky {
+    @apply md:bg-amber-50/30 md:dark:bg-amber-950/10 md:border-amber-100/50 md:dark:border-amber-900/20;
+  }
+
+  .guide-card-warning {
+    @apply md:bg-rose-50/30 md:dark:bg-rose-950/10 md:border-rose-100/50 md:dark:border-rose-900/20;
+  }
+
+  .guide-card-insight {
+    @apply md:bg-indigo-50/30 md:dark:bg-indigo-950/10 md:border-indigo-100/50 md:dark:border-indigo-900/20;
+  }
+
+  .guide-card-step {
+    @apply flex gap-6 md:gap-8 items-start;
+  }
+
+  .guide-step-number {
+    @apply flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-primary/10 md:bg-white md:dark:bg-slate-900 border-none md:border md:border-slate-200 md:dark:border-slate-700 text-primary rounded-full md:rounded-xl flex items-center justify-center font-black text-lg;
+  }
+
+  /* Decorative Utilities for Cards */
+  .decorated-title {
+    @apply relative pb-3 mb-4 inline-block;
+  }
+
+  .decorated-title::after {
+    content: "";
+    @apply absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary/30 to-transparent rounded-full;
+  }
+
+  .decorated-title-accent::after {
+    @apply from-accent/40;
+  }
+
+  .bg-deco-blob {
+    @apply absolute -top-10 -right-10 w-40 h-40 rounded-full opacity-5 blur-3xl pointer-events-none;
+  }
+}

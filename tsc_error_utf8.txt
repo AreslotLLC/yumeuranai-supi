@@ -1,0 +1,17 @@
+scripts/audit-guides.ts(1,25): error TS2307: Cannot find module 'dotenv' or its corresponding type declarations.
+scripts/verify-airtable.ts(1,25): error TS2307: Cannot find module 'dotenv' or its corresponding type declarations.
+src/components/charts/BuildingCorrelationChart.tsx(13,8): error TS2307: Cannot find module 'recharts' or its corresponding type declarations.
+src/components/charts/BuildingCorrelationChart.tsx(39,41): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/components/charts/BuildingCorrelationChart.tsx(64,37): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/components/charts/BuildingCorrelationChart.tsx(64,44): error TS7006: Parameter 'name' implicitly has an 'any' type.
+src/components/charts/PriceTrendChart.tsx(12,8): error TS2307: Cannot find module 'recharts' or its corresponding type declarations.
+src/components/charts/PriceTrendChart.tsx(45,41): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/components/charts/PriceTrendChart.tsx(49,37): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/components/charts/PriceTrendChart.tsx(50,42): error TS7006: Parameter 'label' implicitly has an 'any' type.
+src/components/charts/RoadWidthChart.tsx(13,8): error TS2307: Cannot find module 'recharts' or its corresponding type declarations.
+src/components/charts/RoadWidthChart.tsx(37,41): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/components/charts/RoadWidthChart.tsx(49,37): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/components/charts/RoadWidthChart.tsx(63,41): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/components/charts/SimulationChart.tsx(12,8): error TS2307: Cannot find module 'recharts' or its corresponding type declarations.
+src/components/charts/SimulationChart.tsx(38,41): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/components/charts/SimulationChart.tsx(55,37): error TS7006: Parameter 'value' implicitly has an 'any' type.
