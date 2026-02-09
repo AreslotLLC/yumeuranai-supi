@@ -8,8 +8,8 @@ const PAGE_PATH = "/ad-disclosure";
 const FULL_URL = `${siteConfig.baseUrl}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-    title: "広告掲載について | 夢占い.tokyo",
-    description: "夢占い.tokyoにおける広告掲載・アフィリエイトプログラムの利用についてご説明しています。",
+    title: "広告掲載について | 夢と占い.jp",
+    description: "夢と占い.jpにおける広告掲載・アフィリエイトプログラムの利用についてご説明しています。",
     alternates: {
         canonical: FULL_URL,
     },
@@ -62,7 +62,7 @@ export default function AdDisclosurePage() {
                                 </h2>
                                 <div className="p-4 sm:p-5 bg-primary/5 dark:bg-primary/10 border border-primary/20 rounded-xl mb-4">
                                     <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed">
-                                        当サイト「夢占い.tokyo」は、<strong>アフィリエイトプログラム</strong>を利用しています。
+                                        当サイト「夢と占い.jp」は、<strong>アフィリエイトプログラム</strong>を利用しています。
                                         当サイトに掲載されているリンクを経由して商品・サービスをご購入・ご利用いただいた場合、当サイト運営者に広告報酬が支払われることがあります。
                                     </p>
                                 </div>

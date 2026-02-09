@@ -5,7 +5,7 @@ import { getCategories, getPopularKeywords } from "@/lib/airtable";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { siteConfig } from "@/lib/siteConfig";
 import { SearchBar } from "@/components/home";
-import { ItemListSchema, BreadcrumbSchema } from "@/components/seo";
+import { ItemListSchema, BreadcrumbSchema, DefinedTermSetSchema } from "@/components/seo";
 import { uiStrings } from "@/constants/uiStrings";
 
 export const metadata: Metadata = {
@@ -27,6 +27,20 @@ export default async function ContentsIndexPage() {
                     name: cat.name,
                     url: `${siteConfig.baseUrl}/contents/${encodeURIComponent(cat.slug)}`
                 }))}
+            />
+            <DefinedTermSetSchema
+                name={`${siteConfig.name} 夢占い辞典`}
+                description={siteConfig.description}
+                url={`${siteConfig.baseUrl}/contents`}
+                terms={popularContents.map(content => {
+                    const cat = Array.isArray(content.category) ? content.category[0] : content.category;
+                    const catSlug = cat || "uncategorized";
+                    return {
+                        name: content.title,
+                        url: `${siteConfig.baseUrl}/contents/${encodeURIComponent(catSlug)}/${content.slug}`,
+                        description: content.description || `${content.title}の夢占いの意味を詳しく解説しています。`
+                    };
+                })}
             />
             <BreadcrumbSchema
                 items={[

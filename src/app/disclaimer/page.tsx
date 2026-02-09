@@ -9,7 +9,7 @@ const FULL_URL = `${siteConfig.baseUrl}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
     title: `免責事項 | ${siteConfig.name}`,
-    description: "夢占い.tokyoの免責事項です。当サイトの情報利用に関する注意事項、夢診断の解釈、アフィリエイト広告の使用について説明しています。",
+    description: "夢と占い.jpの免責事項です。当サイトの情報利用に関する注意事項、夢診断の解釈、アフィリエイト広告の使用について説明しています。",
     alternates: {
         canonical: FULL_URL,
     },
@@ -61,7 +61,7 @@ export default function DisclaimerPage() {
                                     1. 夢診断の解釈と正確性について
                                 </h2>
                                 <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                                    夢占い.tokyo（以下「当サイト」といいます）では、掲載する情報の作成時点において、心理学、スピリチュアル、文化的な伝承に基づき可能な限り正確かつ多様な解釈を提供するよう努めております。しかしながら、夢の内容は非常に主観的であり、個人の状況、感情、経験によってその意味や解釈は大きく異なります。
+                                    夢と占い.jp（以下「当サイト」といいます）では、掲載する情報の作成時点において、心理学、スピリチュアル、文化的な伝承に基づき可能な限り正確かつ多様な解釈を提供するよう努めております。しかしながら、夢の内容は非常に主観的であり、個人の状況、感情、経験によってその意味や解釈は大きく異なります。
                                 </p>
                                 <div className="p-4 sm:p-5 bg-indigo-50 dark:bg-indigo-950/30 border border-indigo-200 dark:border-indigo-900 rounded-xl">
                                     <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed">

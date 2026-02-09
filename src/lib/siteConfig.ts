@@ -2,12 +2,12 @@
  * サイト全体の設定
  */
 export const siteConfig = {
-    name: "夢占い.tokyo",
-    siteName: "夢占い.tokyo", // 互換性のため追加
-    alternateName: "yumeuranai.tokyo", // 検索エンジン向けに追加
-    baseUrl: process.env.NEXT_PUBLIC_BASE_URL || "https://yumeuranai.tokyo",
+    name: "夢と占い.jp",
+    siteName: "夢と占い.jp", // 互換性のため追加
+    alternateName: "yumetouranai.jp", // 検索エンジン向けに追加
+    baseUrl: process.env.NEXT_PUBLIC_BASE_URL || "https://yumetouranai.jp",
     description: "あなたの夢には意味があります。動物、人物、シチュエーションなど、夢の内容から深層心理や未来を読み解く日本最大級の夢占いポータルサイト。",
-    publisher: "夢占い.tokyo 編集部",
+    publisher: "夢と占い.jp 編集部",
     keywords: [
         "夢占い",
         "夢辞典",
@@ -50,28 +50,28 @@ export interface GuidePage {
 export const guideCategories: Record<string, GuideCategory> = {
     basics: {
         slug: "basics",
-        name: "夢占いの基礎知識",
+        name: "夢の扉を開く鍵",
         description: "夢が持つ意味や、夢占いの基本的なやり方、読み解き方のコツを解説します。",
         icon: "BookOpenIcon",
         heroImage: "/images/guide/basics.png",
     },
     symbols: {
         slug: "symbols",
-        name: "象徴と意味",
+        name: "万象が語る物語",
         description: "動物、人物、場所など、夢に登場する象徴的なアイテムが示す深層心理。",
         icon: "SparklesIcon",
         heroImage: "/images/guide/symbols.png",
     },
     psychology: {
         slug: "psychology",
-        name: "深層心理と感情",
+        name: "心の奥底への旅路",
         description: "追いかけられる、空を飛ぶなど、夢の中のシチュエーションと心の状態。",
         icon: "HeartIcon",
         heroImage: "/images/guide/psychology.png",
     },
     nightmare: {
         slug: "nightmare",
-        name: "悪夢と予知夢",
+        name: "月影と予兆の調べ",
         description: "怖い夢を見た時の対処法や、特別な意味を持つ予知夢の聞き聞き分け方。",
         icon: "MoonIcon",
         heroImage: "/images/guide/nightmare.png",

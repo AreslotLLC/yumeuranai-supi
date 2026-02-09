@@ -40,6 +40,21 @@ interface SiteNavigationSchemaProps {
     items: { name: string; url: string }[];
 }
 
+interface DefinedTermSetSchemaProps {
+    name: string;
+    description: string;
+    url: string;
+    terms: { name: string; url: string; description: string }[];
+}
+
+interface DefinedTermSchemaProps {
+    name: string;
+    description: string;
+    url: string;
+    termSetUrl: string;
+    termSetName: string;
+}
+
 /**
  * Organization 構造化データ（サイト運営者情報用）
  */
@@ -148,13 +163,13 @@ export function ArticleSchema({
     url,
     publishedTime,
     modifiedTime,
-    authorName = "夢占い.tokyo 編集部",
+    authorName = "夢と占い.jp 編集部",
     images = [],
     categoryName,
     aboutName,
     aboutSameAs,
 }: ArticleSchemaProps) {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://yumeuranai.tokyo";
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://yumetouranai.jp";
     const schema = {
         "@context": "https://schema.org",
         "@type": "Article",
@@ -170,7 +185,7 @@ export function ArticleSchema({
         },
         publisher: {
             "@type": "Organization",
-            name: "夢占い.tokyo",
+            name: "夢と占い.jp",
             logo: {
                 "@type": "ImageObject",
                 url: `${baseUrl}/logo.png`,
@@ -332,6 +347,62 @@ export function ItemListSchema({ items }: ItemListSchemaProps) {
     return (
         <Script
             id="itemlist-schema"
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+    );
+}
+
+/**
+ * DefinedTermSet 構造化データ（辞書全体用）
+ */
+export function DefinedTermSetSchema({ name, description, url, terms }: DefinedTermSetSchemaProps) {
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "DefinedTermSet",
+        "@id": url,
+        name,
+        description,
+        url,
+        hasDefinedTerm: terms.map((term) => ({
+            "@type": "DefinedTerm",
+            name: term.name,
+            url: term.url,
+            description: term.description,
+        })),
+    };
+
+    return (
+        <Script
+            id="defined-term-set-schema"
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+    );
+}
+
+/**
+ * DefinedTerm 構造化データ（個別用語用）
+ */
+export function DefinedTermSchema({ name, description, url, termSetUrl, termSetName }: DefinedTermSchemaProps) {
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "DefinedTerm",
+        "@id": url,
+        name,
+        description,
+        url,
+        inDefinedTermSet: {
+            "@type": "DefinedTermSet",
+            "@id": termSetUrl,
+            name: termSetName,
+            url: termSetUrl
+        }
+    };
+
+    return (
+        <Script
+            id="defined-term-schema"
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />

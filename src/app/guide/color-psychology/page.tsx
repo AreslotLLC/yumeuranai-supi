@@ -6,29 +6,29 @@ import { siteConfig } from "@/lib/siteConfig";
 import { GuideArticle } from "@/components/article/GuideArticle";
 
 export const metadata: Metadata = {
-    title: `カラー別夢占い：夢の中の「色」が伝えるあなたの深層心理 | ${siteConfig.name}`,
-    description: "夢の中の印象的な「色」は何を象徴しているのでしょうか？赤、青、金、白など、色ごとに異なる心理状態や運気のメッセージを詳しく解説します。",
+    title: `「夢の色」が語る心理：夢を彩る七色の魔法 | 夢と占い.jp`,
+    description: "夢の景色を鮮やかに彩る、七色の魔法。赤、青、金、白など、夢の中の印象的な「色」が伝えるあなたの深層心理と運気のメッセージを詳しく解説します。",
 };
 
 export default function ColorPsychologyPage() {
     return (
         <GuideArticle
             slug="color-psychology"
-            title="カラー別夢占い"
-            fullTitle="カラー別夢占い：夢の中の「色」が伝えるあなたの深層心理"
-            description="夢の中の風景や物が、鮮烈な色と共に記憶に残っていることはありませんか？色は、言葉よりも早く直感的にあなたの「今の状態」を伝えてくれます。"
+            title="「夢の色」が語る心理"
+            fullTitle="夢の景色を鮮やかに彩る、七色の魔法。色が奏でる、あなたの心の物語"
+            description="夢の中の風景や物が、鮮烈な色と共に記憶に残っていることはありませんか？色は、言葉よりも早く直感的に、あなたの魂の輝きを伝えてくれます。"
             image="/images/guide/color-psychology.png"
-            category="深層心理と感情"
+            category="万象が語る物語"
             publishedDate="2026-01-30"
         >
             <div className="markdown-content">
                 <section>
-                    <blockquote className="text-center max-w-3xl mx-auto">
-                        色は潜在意識がダイレクトに発するエネルギーです。夢の中の色を紐解くことで、今のあなたが本当に必要としているヒントが見えてきます。
+                    <blockquote className="text-center max-w-3xl mx-auto italic font-medium text-primary/80">
+                        色は、魂が言葉を使わずに描く、情熱のパレット。夢の中の色をそっと読み解くことで、今のあなたが鏡を覗くように、本当の自分と出会えるはずです。
                     </blockquote>
                 </section>
 
-                <h2>1. 基本の3色：白・黒・グレー</h2>
+                <h2>物語の背景、静寂を彩る3つの色</h2>
                 <div className="space-y-6 mb-12">
                     {[
                         {
@@ -79,7 +79,7 @@ export default function ColorPsychologyPage() {
                     ))}
                 </div>
 
-                <h2>2. 感情の色：赤・青・緑</h2>
+                <h2>心の鼓動が奏でる、3つの旋律</h2>
                 <div className="space-y-12 mb-12">
                     {[
                         {
@@ -139,7 +139,7 @@ export default function ColorPsychologyPage() {
                 </div>
 
                 <div className="my-12 guide-card guide-card-insight px-4 py-12 md:p-16">
-                    <h2 className="text-3xl font-black mb-12 border-none p-0 mt-0 text-center">3. 最上級の幸運：金・銀・虹色</h2>
+                    <h2 className="text-3xl font-black mb-12 border-none p-0 mt-0 text-center text-amber-500">天からの贈り物、光り輝く3つの魔法</h2>
                     <p className="text-xl text-slate-500 text-center mb-16 max-w-2xl mx-auto">
                         これらの色が印象に残る夢は「魂の歓喜」とも言える最高潮の幸運期を告げています。
                     </p>

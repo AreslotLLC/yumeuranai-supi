@@ -152,10 +152,10 @@ export async function GET(
                             marginBottom: "24px",
                             fontSize: "28px",
                             fontWeight: 700,
-                            color: "#2563eb",
+                            color: "#e11d48", // ピンク系に変更
                         }}
                     >
-                        夢占い.tokyo
+                        夢と占い.jp
                     </div>
 
                     {/* カテゴリーバッジ */}

@@ -26,7 +26,7 @@ export default async function HomePage() {
   const faqQuestions = uiStrings.home.faq.items;
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
+    <div className="min-h-screen bg-background text-foreground">
       {/* 構造化データ */}
       <WebSiteSchema
         name={siteConfig.name}
@@ -50,8 +50,8 @@ export default async function HomePage() {
         {/* ... (グラデーション部分は維持) ... */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-[10%] -left-[10%] w-[60%] h-[60%] bg-primary/20 blur-[120px] rounded-full" />
-          <div className="absolute -bottom-[10%] -right-[10%] w-[50%] h-[50%] bg-indigo-900/30 blur-[100px] rounded-full" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-purple-900/10 blur-[150px] rounded-full" />
+          <div className="absolute -bottom-[10%] -right-[10%] w-[50%] h-[50%] bg-secondary/30 blur-[100px] rounded-full" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-accent/10 blur-[150px] rounded-full" />
         </div>
 
         {/* ... (星空部分は維持) ... */}
@@ -87,7 +87,7 @@ export default async function HomePage() {
                 </span>
               </h1>
 
-              <p className="text-xl sm:text-2xl text-slate-300/80 mb-12 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light whitespace-pre-line">
+              <p className="text-xl sm:text-2xl text-foreground/70 mb-12 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light whitespace-pre-line">
                 {uiStrings.home.hero.description}
               </p>
 
@@ -112,7 +112,7 @@ export default async function HomePage() {
               <div className="mt-6 flex justify-center lg:justify-start">
                 <Link
                   href="/keywords"
-                  className="inline-flex items-center gap-2 text-slate-400 hover:text-white text-sm font-medium transition-colors"
+                  className="inline-flex items-center gap-2 text-foreground/50 hover:text-primary text-sm font-medium transition-colors"
                 >
                   五十音索引で全キーワードを見る <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -151,9 +151,9 @@ export default async function HomePage() {
 
 
       {/* カテゴリから探す */}
-      <section className="py-20 bg-slate-50/50 dark:bg-slate-950 border-y border-slate-100 dark:border-slate-800">
+      <section className="py-20 bg-muted/20 border-y border-border/20">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-12 font-serif">
+          <h2 className="text-3xl font-black text-foreground mb-12 font-serif">
             {uiStrings.home.categories.title}
           </h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
@@ -162,10 +162,10 @@ export default async function HomePage() {
                 <Link
                   key={cat.id || idx}
                   href={`/contents/${encodeURIComponent(cat.name)}`}
-                  className="group relative p-8 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all shadow-sm hover:shadow-mystic flex flex-col items-center justify-center text-center overflow-hidden min-h-[120px]"
+                  className="group relative p-8 bg-card rounded-[2.5rem] border border-border/40 hover:border-primary/50 transition-all shadow-sm hover:shadow-mystic flex flex-col items-center justify-center text-center overflow-hidden min-h-[120px]"
                 >
                   <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full -mr-12 -mt-12 group-hover:scale-150 transition-transform duration-700" />
-                  <div className="relative z-10 font-bold text-slate-800 dark:text-slate-200 group-hover:text-primary transition-colors font-serif text-lg md:text-xl">
+                  <div className="relative z-10 font-bold text-foreground/80 group-hover:text-primary transition-colors font-serif text-lg md:text-xl">
                     {cat.name}
                   </div>
                 </Link>
@@ -176,14 +176,14 @@ export default async function HomePage() {
       </section>
 
       {/* 注目のガイド記事 */}
-      <section className="py-20 bg-slate-50 dark:bg-slate-950">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="flex items-end justify-between mb-12">
             <div>
-              <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-4 font-serif">
+              <h2 className="text-3xl font-black text-foreground mb-4 font-serif">
                 {uiStrings.home.featuredGuides.title}
               </h2>
-              <p className="text-slate-600 dark:text-slate-400">
+              <p className="text-foreground/70">
                 {uiStrings.home.featuredGuides.description}
               </p>
             </div>
@@ -197,15 +197,15 @@ export default async function HomePage() {
               <Link
                 key={guide.slug}
                 href={`/guide/${guide.slug}`}
-                className="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-mystic transition-all group block"
+                className="bg-card rounded-3xl p-8 border border-border/40 shadow-sm hover:shadow-mystic transition-all group block"
               >
                 <div className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full mb-4">
                   {guide.category}
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-primary transition-colors line-clamp-2">
+                <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors line-clamp-2">
                   {guide.fullTitle || guide.title}
                 </h3>
-                <p className="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed line-clamp-3">
+                <p className="text-foreground/70 text-sm mb-6 leading-relaxed line-clamp-3">
                   {guide.description}
                 </p>
                 <div className="flex items-center text-primary font-bold text-sm">
@@ -221,13 +221,13 @@ export default async function HomePage() {
       <HomeFAQ questions={faqQuestions} />
 
       {/* 信頼性 */}
-      <section className="py-20 bg-primary/5 text-slate-900">
+      <section className="py-20 bg-primary/5 text-foreground">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-black mb-4 font-serif">
               {uiStrings.home.trust.title}
             </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">
+            <p className="text-foreground/70 max-w-2xl mx-auto">
               {uiStrings.home.trust.description}
             </p>
           </div>

@@ -17,7 +17,7 @@ export function Header() {
     ];
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 dark:border-slate-800 dark:bg-slate-950/95 dark:supports-[backdrop-filter]:bg-slate-950/80">
+        <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
             <SiteNavigationSchema items={navItems} />
             <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
                 {/* ロゴ */}
@@ -34,7 +34,7 @@ export function Header() {
                         <Link
                             key={link.href}
                             href={link.href}
-                            className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                            className="px-4 py-2 text-sm font-medium text-foreground/70 hover:text-primary dark:text-foreground/60 dark:hover:text-primary rounded-lg hover:bg-primary/5 transition-colors"
                         >
                             {link.label}
                         </Link>
@@ -44,7 +44,7 @@ export function Header() {
                 {/* モバイルメニューボタン */}
                 <button
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    className="md:hidden p-2 text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                    className="md:hidden p-2 text-foreground/70 hover:text-primary rounded-lg hover:bg-primary/5 transition-colors"
                     aria-label="メニュー"
                 >
                     {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -60,7 +60,7 @@ export function Header() {
                                 key={link.href}
                                 href={link.href}
                                 onClick={() => setIsMenuOpen(false)}
-                                className="block px-4 py-3 text-base font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                                className="block px-4 py-3 text-base font-medium text-foreground/70 hover:text-primary rounded-lg hover:bg-primary/5 transition-colors"
                             >
                                 {link.label}
                             </Link>
@@ -74,7 +74,7 @@ export function Header() {
 
 export function Footer() {
     return (
-        <footer className="border-t border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-900 transition-colors duration-300">
+        <footer className="border-t border-border/30 bg-muted/30 transition-colors duration-300">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16">
                     {/* ブランドと説明 */}
@@ -82,14 +82,14 @@ export function Footer() {
                         <Link href="/" className="text-2xl font-bold font-serif text-primary inline-block mb-6">
                             {siteConfig.name}
                         </Link>
-                        <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 max-w-md">
+                        <p className="text-sm text-foreground/60 leading-relaxed mb-6 max-w-md">
                             {uiStrings.footer.description}
                         </p>
                     </div>
 
                     {/* ガイドナビゲーション */}
                     <div>
-                        <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-6">
+                        <h4 className="text-sm font-bold text-foreground/90 uppercase tracking-wider mb-6">
                             {uiStrings.footer.navGuides}
                         </h4>
                         <nav className="flex flex-col gap-4">
@@ -107,7 +107,7 @@ export function Footer() {
 
                     {/* リーガル・その他 */}
                     <div>
-                        <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-6">
+                        <h4 className="text-sm font-bold text-foreground/90 uppercase tracking-wider mb-6">
                             {uiStrings.footer.navSite}
                         </h4>
                         <nav className="flex flex-col gap-4">
@@ -125,12 +125,12 @@ export function Footer() {
                 </div>
 
                 {/* 下部エリア */}
-                <div className="mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
-                    <p className="text-xs text-slate-400">
+                <div className="mt-16 pt-8 border-t border-border/30 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <p className="text-xs text-foreground/40">
                         © {new Date().getFullYear()} {siteConfig.name} All rights reserved.
                     </p>
                     <div className="flex gap-6">
-                        <span className="text-xs text-slate-400 italic">{uiStrings.footer.tagline}</span>
+                        <span className="text-xs text-foreground/40 italic">{uiStrings.footer.tagline}</span>
                     </div>
                 </div>
             </div>

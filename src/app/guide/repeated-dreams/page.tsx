@@ -6,25 +6,25 @@ import { siteConfig } from "@/lib/siteConfig";
 import { GuideArticle } from "@/components/article/GuideArticle";
 
 export const metadata: Metadata = {
-    title: `何度も同じ夢を見る理由：潜在意識からの重要な警告とメッセージ | ${siteConfig.name}`,
-    description: "なぜ同じ場面、同じ展開の夢を繰り返し見るのでしょうか？心理学的な背景や、潜在意識が伝えようとしている「警告」とメッセージ、そこで運気を好転させるための対処法を詳しく解説します。",
+    title: `「同じ夢」の調べ：魂が繰り返す旋律 | 夢と占い.jp`,
+    description: "魂が何度も繰り返す、切実な愛の旋律。なぜ同じ夢を繰り返し見るのでしょうか？潜在意識が伝えようとしている「警告」とメッセージ、運気を好転させるための対処法を解説します。",
 };
 
 export default function RepeatedDreamsPage() {
     return (
         <GuideArticle
             slug="repeated-dreams"
-            title="同じ夢を見る理由"
-            fullTitle="何度も同じ夢を見る理由：潜在意識からの重要な警告とメッセージ"
-            description="「またあの夢だ……」と不思議に思ったことはありませんか？繰り返される夢には、あなたの人生を左右する重要なヒントが隠されています。"
-            image="/images/guide/psychology.png"
-            category="深層心理と感情"
+            title="「同じ夢」の調べ"
+            fullTitle="魂が何度も繰り返す、切実な愛の旋律。同じ夢があなたに伝えたい、真実の想い"
+            description="「またあの夢だ……」と不思議に思ったことはありませんか？繰り返される夢には、あなたの魂が今まさに必要としている、大切なメッセージが隠されています。"
+            image="/images/guide/repeated.png"
+            category="心の奥底への旅路"
             publishedDate="2026-01-29"
         >
             <div className="markdown-content">
                 <section>
                     <blockquote className="text-center max-w-3xl mx-auto">
-                        夢は脳が情報を整理する過程で見るとされていますが、同じ内容が繰り返される場合、それは単なる整理以上の意味を持ちます。
+                        夢は、夜ごとの記憶の整理整頓。でも、同じ旋律が繰り返されるなら、そこには特別な譜面が隠されているのかもしれません。魂があなたに伝えたい、あきらめない想いに耳を傾けてみましょう。
                     </blockquote>
                     <div className="grid md:grid-cols-2 gap-8 mt-12">
                         <div className="guide-card relative overflow-hidden group">
@@ -44,7 +44,7 @@ export default function RepeatedDreamsPage() {
                     </div>
                 </section>
 
-                <h2>潜在意識が送る「3つの警告」</h2>
+                <h2>魂がささやく、3つの大切な合図</h2>
                 <div className="space-y-6 mb-12">
                     {[
                         { step: "01", t: "極度のストレスと疲労", d: <>「追いかけられる夢」や「逃げ場がない」夢は、現実のプレッシャーが限界に近いサインです。<Link href="/contents/situation/chased" className="mx-1">追いかけられる夢の解説</Link></> },
@@ -73,7 +73,7 @@ export default function RepeatedDreamsPage() {
                 </section>
 
                 <div className="my-12 guide-card guide-card-insight px-4 py-10 md:p-12">
-                    <h2 className="text-3xl font-black mb-12 border-none p-0 mt-0">本質的な解決へのアクション</h2>
+                    <h2 className="text-3xl font-black mb-12 border-none p-0 mt-0">心のつかえを解き、穏やかな眠りへ誘うアクション</h2>
                     <div className="grid md:grid-cols-3 gap-6">
                         {[
                             { t: "解決のイメージ", d: "寝る前に「次はこうする」と成功展開を強くイメージする。" },

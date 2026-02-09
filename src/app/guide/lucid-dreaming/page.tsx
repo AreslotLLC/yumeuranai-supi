@@ -5,32 +5,32 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { GuideFooter } from "@/components/article/GuideFooter";
 
 export const metadata = {
-    title: `明晰夢（夢を操る）のコツ：意識的に夢を見るためのトレーニング方法 | ${siteConfig.name}`,
-    description: "夢の中で「これは夢だ！」と気づく体験、明晰夢。そのメリットから、現実確認（リアリティ・チェック）、暗示を用いた具体的な習得テクニック、そして注意点までを徹底解説します。",
+    title: `「明晰夢」の旅：夢の国を自由に泳いで | 夢と占い.jp`,
+    description: "夢の国を、思うままに自由に泳いで。意識を研ぎ澄まし、夢の主役になるための具体的なテクニックやトレーニング方法を徹底解説します。",
 };
 
 export default function LucidDreamingPage() {
     return (
         <GuideArticle
             slug="lucid-dreaming"
-            title="明晰夢のコツ"
-            fullTitle="明晰夢（夢を操る）のコツ：意識的に夢を見るためのトレーニング"
-            description="夢の中で「これは夢だ」と気づいたことはありますか？明晰夢は、単なる不思議な体験ではなく、あなたの創造性やメンタルケアを飛躍させる可能性を持っています。"
-            image="/images/guide/psychology.png"
-            category="深層心理と感情"
+            title="「明晰夢」の旅"
+            fullTitle="夢の国を、思うままに自由に泳いで。意識を研ぎ澄まし、夢の主役になる秘策"
+            description="夢の中で「これは夢だ」と気づいたことはありますか？明晰夢は、単なる不思議な体験ではなく、あなたの創造性や心を自由に解き放つ鍵となります。"
+            image="/images/guide/lucid.png"
+            category="夢の扉を開く鍵"
             publishedDate="2026-01-30"
         >
             <div className="markdown-content">
                 <section>
-                    <blockquote className="text-center max-w-3xl mx-auto border-l-4 border-amber-400 py-4 px-8 bg-amber-400/5 rounded-r-3xl">
-                        「夢」は誰もが毎晩訪れる異世界ですが、そこを「自分の意志で探索」できるとしたらどうでしょうか。明晰夢（ルシッド・ドリーミング）は、科学的にも証明された脳のスキルであり、訓練次第で誰でも習得可能です。
+                    <blockquote className="text-center max-w-3xl mx-auto border-l-4 border-amber-400 py-4 px-8 bg-amber-400/5 rounded-r-3xl italic">
+                        「夢」は、誰もが毎晩迷い込む、不思議な不思議な異世界。でも、そこを「自分の意志で探索」できるとしたら……。明晰夢（ルシッド・ドリーミング）は、あなたの意識が夢の国と響き合う、特別なスキルなのです。
                     </blockquote>
                 </section>
 
                 <section className="mt-16">
                     <h2 className="text-3xl font-black mb-10 border-none p-0 flex items-center gap-3">
                         <span className="w-10 h-10 rounded-xl bg-amber-400/10 flex items-center justify-center text-amber-500 text-lg font-serif">01</span>
-                        明晰夢の科学：脳で何が起きているのか？
+                        夢の仕組み：意識の光が灯る、神秘の科学
                     </h2>
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div className="leading-relaxed">
@@ -56,7 +56,7 @@ export default function LucidDreamingPage() {
 
                 <h2 className="text-3xl font-black mt-16 mb-10 border-none p-0 flex items-center gap-3">
                     <span className="w-10 h-10 rounded-xl bg-amber-400/10 flex items-center justify-center text-amber-500 text-lg font-serif">02</span>
-                    自覚のトリガー「RC法（現実確認）」
+                    目覚めのトリガー、現実を問い直す魔法の儀式
                 </h2>
                 <div className="bg-slate-900 p-8 md:p-12 rounded-[3rem] mb-12 text-white shadow-2xl ring-1 ring-white/10 relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-amber-400/30 to-transparent" />
@@ -83,7 +83,7 @@ export default function LucidDreamingPage() {
                 <section className="mt-16">
                     <h2 className="text-3xl font-black mb-10 border-none p-0 flex items-center gap-3">
                         <span className="w-10 h-10 rounded-xl bg-amber-400/10 flex items-center justify-center text-amber-500 text-lg font-serif">03</span>
-                        習得を加速する「MILD法」
+                        夢の世界へ入り込む、記憶のしおり
                     </h2>
                     <p className="mb-10 text-lg">
                         記憶力を利用して明晰夢を誘発する「MILD法（Mnemonic Induction of Lucid Dreams）」は、初心者でも成功率が高い手法です。
@@ -106,7 +106,7 @@ export default function LucidDreamingPage() {
                 <section className="mt-12">
                     <h2 className="text-3xl font-black mb-10 border-none p-0 flex items-center gap-3">
                         <span className="w-10 h-10 rounded-xl bg-amber-400/10 flex items-center justify-center text-amber-500 text-lg font-serif">04</span>
-                        上級テクニック「WILD法」
+                        覚醒のまま深淵へ、静かなる旅路
                     </h2>
                     <p className="mb-8 font-medium text-slate-700 dark:text-slate-300">
                         「WILD法（Wake-Initiated Lucid Dream）」は、意識を保ったまま直接夢へと移行する究極のテクニックです。

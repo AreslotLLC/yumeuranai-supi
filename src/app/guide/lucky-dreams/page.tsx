@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle2, Star } from "lucide-react";
 import { GuideFooter } from "@/components/article/GuideFooter";
 
 export const metadata = {
-    title: "金運・幸運を呼ぶ夢の象徴：宝くじ当選や成功の前兆とされる「吉夢」ガイド",
+    title: "「吉夢」のささやき：幸福のしずく、光への導き | 夢と占い.jp",
     description: "白蛇、火事、自分が死ぬ夢……。一見怖そうでも実は最強の大吉夢？金運や成功、人間関係の劇的好転を暗示する幸運のサインを詳しく解説します。",
     alternates: {
         canonical: `${siteConfig.baseUrl}/guide/lucky-dreams`,
@@ -17,21 +17,21 @@ export default function Page() {
     return (
         <GuideArticle
             slug="lucky-dreams"
-            title="金運・幸運の夢"
-            fullTitle={metadata.title}
+            title="「吉夢」のささやき"
+            fullTitle="運命がささやく幸福のしずく。光り輝く未来を呼び込む「吉夢」の調べ"
             description={metadata.description}
             image="/images/guide/lucky.png"
-            category="象徴と意味"
+            category="万象が語る物語"
             publishedDate="2026-01-30"
         >
             <div className="markdown-content">
                 <section>
                     <blockquote className="text-center max-w-3xl mx-auto">
-                        夢占いには、素晴らしい幸運が舞い込むことを知らせる「吉夢（きちむ）」が数多く存在します。特にお金、成功、そして自己の再生にまつわる、最強の幸運サインを厳選して解説します。
+                        夢の世界には、幸福のしずくがこぼれ落ちる予兆があふれています。それらは「吉夢（きちむ）」と呼ばれ、あなたの人生が鮮やかに彩られる。そんな素敵な未来を静かにささやいているのです。
                     </blockquote>
                 </section>
 
-                <h2>最強の金運・成功運を呼ぶ「5大シンボル」</h2>
+                <h2>光り輝く未来へ誘う、5つの輝石</h2>
 
                 <div className="space-y-6 mb-12">
                     {[

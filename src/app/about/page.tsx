@@ -8,8 +8,8 @@ const PAGE_PATH = "/about";
 const FULL_URL = `${siteConfig.baseUrl}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-    title: "運営者情報 | 夢占い.tokyo",
-    description: "夢占い.tokyoの運営者情報ページです。サイトの運営方針、連絡先等をご案内しています。",
+    title: "運営者情報 | 夢と占い.jp",
+    description: "夢と占い.jpの運営者情報ページです。サイトの運営方針、連絡先等をご案内しています。",
     alternates: {
         canonical: FULL_URL,
     },
@@ -36,7 +36,7 @@ export default function AboutPage() {
                             運営者情報
                         </h1>
                         <p className="text-slate-600 dark:text-slate-400">
-                            夢占い.tokyoの運営について
+                            夢と占い.jpの運営について
                         </p>
                     </div>
                 </div>
@@ -68,7 +68,7 @@ export default function AboutPage() {
                                                     サイト名
                                                 </th>
                                                 <td className="px-4 py-4 text-slate-600 dark:text-slate-400">
-                                                    夢占い.tokyo
+                                                    夢と占い.jp
                                                 </td>
                                             </tr>
                                             <tr className="bg-white dark:bg-slate-950">
@@ -118,7 +118,7 @@ export default function AboutPage() {
                                     サイトの目的
                                 </h2>
                                 <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                                    「夢占い.tokyo」は、日々の睡眠の中で見る「夢」という不思議な現象を通じて、自分自身の深層心理や未来へのヒントを紐解くためのお手伝いをする情報サイトです。
+                                    「夢と占い.jp」は、日々の睡眠の中で見る「夢」という不思議な現象を通じて、自分自身の深層心理や未来へのヒントを紐解くためのお手伝いをする情報サイトです。
                                 </p>
                                 <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
                                     夢は単なる幻想ではなく、私たちの無意識が発する重要なメッセージであると私たちは考えています。当サイトでは、古今東西の文献や心理学的アプローチを参考に、現代のライフスタイルに合わせた解釈を分かりやすく提供することを目指しています。

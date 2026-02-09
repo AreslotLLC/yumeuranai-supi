@@ -2,6 +2,8 @@
   "name": "yumeuranai-jp",
   "version": "0.1.0",
   "private": true,
+  "description": "夢と占い.jp - あなたの夢を解き明かす、日本最大級の夢占い・夢診断ポータルサイト",
+  "author": "Areslot LLC",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

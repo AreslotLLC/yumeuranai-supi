@@ -6,8 +6,8 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { GuideFooter } from "@/components/article/GuideFooter";
 
 export const metadata = {
-    title: "予知夢と正夢の正体：現実を予見する夢を見分ける3つのポイントと科学的背景",
-    description: "「昨日見た夢と同じことが現実に起きた！」デジャヴや予知夢はなぜ起きるのか？特別な意味を持つ夢の特徴と、脳科学・心理学的な視点を交えて詳しく解説します。",
+    title: "「予知夢」の余韻：未来からの静かなメッセージ | 夢と占い.jp",
+    description: "時を超えて届く、未来からの静かな余韻。デジャヴや予知夢はなぜ起きるのか？特別な意味を持つ夢の特徴と、科学的背景・心理学的な視点を交えて詳しく解説します。",
     alternates: {
         canonical: `${siteConfig.baseUrl}/guide/precognitive-dreams`,
     },
@@ -17,21 +17,22 @@ export default function Page() {
     return (
         <GuideArticle
             slug="precognitive-dreams"
-            title="予知夢と正夢"
-            fullTitle={metadata.title}
+            title="「予知夢」の余韻"
+            fullTitle="時を超えて届く、未来からの静かな余韻。予知夢と正夢が告げる運命の予兆"
             description={metadata.description}
             image="/images/guide/precognitive.png"
-            category="悪夢と予知夢"
+            category="月影と予兆の調べ"
             publishedDate="2026-01-30"
         >
             <div className="markdown-content">
                 <section className="mb-10">
-                    <p className="text-xl leading-relaxed text-slate-600 dark:text-slate-400 font-medium text-center max-w-3xl mx-auto">
-                        夢と現実がリンクする瞬間。それは、あなたの潜在意識が未来の可能性を捉えたサインかもしれません。
+                    <p className="text-xl leading-relaxed text-slate-600 dark:text-slate-400 font-medium text-center max-w-3xl mx-auto border-l-4 border-primary/20 pl-8 italic">
+                        夢と現実が、そっと手をつなぐ瞬間。<br />
+                        それは、あなたの潜在意識が未来の可能性を優しく捉えた、静かな予兆のサインかもしれません。
                     </p>
                 </section>
 
-                <h2>1. 「予知夢」を見分ける3つのポイント</h2>
+                <h2>未来からの余韻を捉える、3つの導るべ</h2>
                 <div className="space-y-6 mb-12">
                     {[
                         { t: "異様に鮮明でリアル", d: "匂い、感触、温度まで記憶に残るハイビジョンな質感。起きた後も色が褪せません。" },
@@ -82,7 +83,7 @@ export default function Page() {
                 </div>
 
                 <div className="my-12">
-                    <h2 className="text-3xl font-black mb-10 border-none p-0 leading-tight">科学的な正体：脳の高度予測</h2>
+                    <h2 className="text-3xl font-black mb-10 border-none p-0 leading-tight">知性の奥底、脳が奏でる「高度な予測」という名の魔法</h2>
                     <div className="bg-slate-900 p-8 md:p-12 rounded-[3rem] text-white">
                         <p className="text-xl leading-relaxed m-0 text-slate-300 font-medium italic">
                             脳は無意識のうちに膨大な情報を収集しています。睡眠中、そのデータを基に「このままいくとどうなるか」をシミュレーションした結果が予知夢です。それはあなたの<strong>「無意識の洞察力」</strong>が導き出した未来予想図なのです。

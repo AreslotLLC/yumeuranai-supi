@@ -6,7 +6,7 @@ import { CheckCircle2, Lightbulb, ArrowRight } from "lucide-react";
 import { GuideFooter } from "@/components/article/GuideFooter";
 
 export const metadata = {
-    title: "夢占いとは？深層心理のメッセージを読み解く基礎知識と活用法",
+    title: "「夢占い」の扉を開く：夜空が届ける心の手紙 | 夢と占い.jp",
     description: "夢占いの歴史から心理学的・スピリチュアル的アプローチ、正しい解釈のコツまで徹底解説。夢が教える深層心理のSOSや未来の予兆を捉えるための完全ガイドです。",
     alternates: {
         canonical: `${siteConfig.baseUrl}/guide/meaning-of-dreams`,
@@ -17,21 +17,21 @@ export default function Page() {
     return (
         <GuideArticle
             slug="meaning-of-dreams"
-            title="夢占いの基礎知識"
-            fullTitle={metadata.title}
+            title="「夢占い」の扉を開く"
+            fullTitle="夜空が届ける、心からのお手紙：夢占いの扉を開くための最初の一歩"
             description={metadata.description}
             image="/images/guide/basics.png"
-            category="夢占いの基礎知識"
+            category="夢の扉を開く鍵"
             publishedDate="2026-01-22"
         >
             <div className="markdown-content">
                 <section>
                     <blockquote className="text-center max-w-3xl mx-auto">
-                        夢占いは単なる迷信ではなく、私たちの<strong>深層心理が発しているメッセージや、脳が整理しきれなかった感情を捉えるためのツール</strong>です。正しく理解することで、ストレスの解消や自己成長、さらには幸運を掴むきっかけになります。
+                        夢占いは、夜空があなただけに届ける特別な手紙のようなものです。それは単なる迷信ではなく、<strong>あなたの深層心理がそっとささやくメッセージ</strong>。心の奥底に眠る感情を優しく捉え、解き明かしていく。そのプロセスは、あなた自身の魂と対話し、輝く未来へと導く一筋の光となるでしょう。
                     </blockquote>
                 </section>
 
-                <h2>夢占いの二つのアプローチ</h2>
+                <h2>夢を読み解く、二つの魔法</h2>
                 <p>
                     夢の解釈には、心理学的な視点とスピリチュアル的な視点の二つが存在します。
                 </p>
@@ -55,7 +55,7 @@ export default function Page() {
                     </div>
                     <div className="guide-card relative overflow-hidden group">
                         <div className="bg-deco-blob bg-accent/10" />
-                        <h3 className="decorated-title decorated-title-accent mt-0 border-none p-0 leading-tight">2. スピリチュアル的解決</h3>
+                        <h3 className="decorated-title decorated-title-accent mt-0 border-none p-0 leading-tight">2. スピリチュアル、魂のささやき</h3>
                         <p className="mb-8">
                             古来より、夢は「予兆」や「神託」として重宝されてきました。特定のシンボル（<Link href="/contents/animal/snake">蛇</Link>、<Link href="/contents/situation/fire">火事</Link>など）が未来の出来事を予見しているという考え方です。
                         </p>
@@ -71,7 +71,7 @@ export default function Page() {
                     </div>
                 </div>
 
-                <h2>夢を読み解く「3ステップ」</h2>
+                <h2>夢のメッセージを紐解く、3つのしおり</h2>
 
                 <div className="space-y-6 mb-12">
                     {[

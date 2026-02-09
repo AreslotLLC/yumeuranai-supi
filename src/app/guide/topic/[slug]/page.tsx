@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: TopicPageProps): Promise<Meta
     if (!category) return { title: "カテゴリが見つかりません" };
 
     return {
-        title: `${category.name} | 夢占い.tokyo`,
+        title: `${category.name} | 夢と占い.jp`,
         description: category.description,
         alternates: {
             canonical: `${siteConfig.baseUrl}/guide/topic/${slug}`,

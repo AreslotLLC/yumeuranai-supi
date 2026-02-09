@@ -6,7 +6,7 @@ import { CheckCircle2, ArrowRight } from "lucide-react";
 import { GuideFooter } from "@/components/article/GuideFooter";
 
 export const metadata = {
-    title: "夢を覚える方法：夢日記の書き方と記憶を定着させる実践テクニック",
+    title: "「夢を覚える」魔法：記憶の星屑を紡いで | 夢と占い.jp",
     description: "起きた瞬間に忘れてしまう夢を記憶に留めるための「夢日記」の正しい方法や、枕元での準備、心理的な注意点（夢酔い）について詳しく解説します。",
     alternates: {
         canonical: `${siteConfig.baseUrl}/guide/how-to-remember-dreams`,
@@ -17,11 +17,11 @@ export default function Page() {
     return (
         <GuideArticle
             slug="how-to-remember-dreams"
-            title="夢を覚える方法"
-            fullTitle={metadata.title}
+            title="「夢を覚える」魔法"
+            fullTitle="消えゆく記憶の星屑を紡いで。夢の物語を明日のあなたへ繋ぐ方法"
             description={metadata.description}
             image="/images/guide/remember.png"
-            category="夢占いの基礎知識"
+            category="夢の扉を開く鍵"
             publishedDate="2026-01-30"
         >
             <div className="markdown-content">
@@ -31,14 +31,14 @@ export default function Page() {
                         そんな経験はありませんか？
                     </p>
                     <div className="mt-12 bg-white dark:bg-slate-900 p-10 rounded-[3rem] border border-slate-100 dark:border-slate-800">
-                        <h3 className="text-2xl font-black mb-6 text-slate-900 dark:text-white mt-0 border-none p-0 leading-tight">脳が「忘れる」理由</h3>
+                        <h3 className="text-2xl font-black mb-6 text-slate-900 dark:text-white mt-0 border-none p-0 leading-tight">夢が夜空へ還ってしまう理由</h3>
                         <p className="leading-relaxed m-0 text-slate-600 dark:text-slate-400">
                             脳は目覚めと同時に「現実」へとスイッチを切り替えます。夢は重要度の低い短期記憶としてすぐに消去される仕組みになっています。そのため、<strong>「この夢は大切だ」と脳に認識させること</strong>が、記憶に留めるための不可欠な第一歩です。
                         </p>
                     </div>
                 </section>
 
-                <h2>目覚めた瞬間の「不動」の魔法</h2>
+                <h2>目覚めのしじま、記憶を止める魔法</h2>
                 <div className="grid md:grid-cols-2 gap-8 mb-12">
                     <div className="guide-card relative overflow-hidden group">
                         <div className="bg-deco-blob bg-primary/10" />

@@ -56,7 +56,7 @@ export async function GuideArticle({
     });
 
     return (
-        <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
+        <div className="min-h-screen bg-background text-foreground">
             <ArticleSchema
                 title={fullTitle || title}
                 description={description || ""}
@@ -95,7 +95,7 @@ export async function GuideArticle({
                     {/* メインコンテンツ */}
                     <main className="flex-1 min-w-0">
                         {/* 記事本文 */}
-                        <div className="bg-slate-50/50 dark:bg-slate-900/50 rounded-3xl md:rounded-[3rem] px-4 py-8 sm:p-8 md:p-10 lg:p-12 border border-slate-200 dark:border-slate-800 mb-8">
+                        <div className="bg-card/50 rounded-3xl md:rounded-[3rem] px-4 py-8 sm:p-8 md:p-10 lg:p-12 border border-border/40 mb-8">
                             {children}
 
                             {/* 記事下広告エリア */}
@@ -108,7 +108,7 @@ export async function GuideArticle({
                         {/* 関連記事 */}
                         {relatedGuides.length > 0 && (
                             <div className="mt-12">
-                                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
+                                <h3 className="text-2xl font-bold text-foreground mb-8 flex items-center gap-3">
                                     <span className="w-10 h-10 bg-primary/10 text-primary flex items-center justify-center rounded-xl transition-colors group-hover:bg-primary group-hover:text-white">
                                         <Library className="w-5 h-5" />
                                     </span>
@@ -129,7 +129,7 @@ export async function GuideArticle({
                                                     className="object-cover transition-transform group-hover:scale-105"
                                                 />
                                             </div>
-                                            <h4 className="font-bold text-slate-900 dark:text-white text-base line-clamp-2 group-hover:text-primary transition-colors">
+                                            <h4 className="font-bold text-foreground text-base line-clamp-2 group-hover:text-primary transition-colors">
                                                 {related.fullTitle || related.title}
                                             </h4>
                                         </Link>

@@ -50,80 +50,81 @@
 
 :root {
   --radius: 0.75rem;
-  --background: oklch(0.97 0.01 260);
-  /* Slightly darker for contrast */
-  --foreground: oklch(0.15 0.05 280);
-  /* Deep midnight purple for text */
+  --background: oklch(0.98 0.012 350);
+  /* ほんのりピンクがかった白 */
+  --foreground: oklch(0.18 0.04 320);
+  /* 深いローズブラウンでテキスト */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0.05 280);
+  --card-foreground: oklch(0.18 0.04 320);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0.05 280);
-  --primary: oklch(0.4 0.2 280);
-  /* Deep Mystic Purple #6B21A8 relative */
-  --primary-foreground: oklch(0.98 0.01 260);
-  --secondary: oklch(0.92 0.04 280);
-  /* Soft Lavender */
-  --secondary-foreground: oklch(0.3 0.1 280);
-  --muted: oklch(0.95 0.02 280);
-  --muted-foreground: oklch(0.4 0.05 280);
-  --accent: oklch(0.75 0.18 80);
-  /* Golden Dream #EAB308 relative */
-  --accent-foreground: oklch(0.15 0.05 280);
+  --popover-foreground: oklch(0.18 0.04 320);
+  --primary: oklch(0.65 0.22 350);
+  /* 柔らかいローズピンク（メインカラー） */
+  --primary-foreground: oklch(0.98 0.01 350);
+  --secondary: oklch(0.55 0.18 300);
+  /* しっとりした紫（サブカラー） */
+  --secondary-foreground: oklch(0.98 0.01 300);
+  --muted: oklch(0.95 0.02 350);
+  --muted-foreground: oklch(0.45 0.05 320);
+  --accent: oklch(0.75 0.15 300);
+  /* 明るいラベンダー（アクセント） */
+  --accent-foreground: oklch(0.18 0.04 320);
   --destructive: oklch(0.5 0.15 25);
-  --border: oklch(0.85 0.05 280);
-  /* Slightly darker for better contrast */
-  --input: oklch(0.85 0.05 280);
-  --ring: oklch(0.4 0.2 280);
-  --chart-1: oklch(0.4 0.2 280);
-  --chart-2: oklch(0.75 0.18 80);
-  --chart-3: oklch(0.5 0.15 280);
-  --chart-4: oklch(0.85 0.1 80);
-  --chart-5: oklch(0.6 0.1 280);
-  --sidebar: oklch(0.98 0.01 280);
-  --sidebar-foreground: oklch(0.15 0.05 280);
-  --sidebar-primary: oklch(0.4 0.2 280);
-  --sidebar-primary-foreground: oklch(0.98 0.01 280);
-  --sidebar-accent: oklch(0.92 0.04 280);
-  --sidebar-accent-foreground: oklch(0.4 0.2 280);
-  --sidebar-border: oklch(0.9 0.05 280);
-  --sidebar-ring: oklch(0.4 0.2 280);
+  --border: oklch(0.88 0.04 350);
+  /* やさしいピンクボーダー */
+  --input: oklch(0.88 0.04 350);
+  --ring: oklch(0.65 0.22 350);
+  --chart-1: oklch(0.65 0.22 350);
+  --chart-2: oklch(0.55 0.18 300);
+  --chart-3: oklch(0.75 0.15 300);
+  --chart-4: oklch(0.85 0.1 350);
+  --chart-5: oklch(0.6 0.1 320);
+  --sidebar: oklch(0.98 0.01 350);
+  --sidebar-foreground: oklch(0.18 0.04 320);
+  --sidebar-primary: oklch(0.65 0.22 350);
+  --sidebar-primary-foreground: oklch(0.98 0.01 350);
+  --sidebar-accent: oklch(0.92 0.04 350);
+  --sidebar-accent-foreground: oklch(0.65 0.22 350);
+  --sidebar-border: oklch(0.92 0.03 350);
+  --sidebar-ring: oklch(0.65 0.22 350);
 }
 
 .dark {
-  --background: oklch(0.12 0.04 280);
-  /* Midnight Purple - Night Sky */
-  --foreground: oklch(0.95 0.02 260);
-  --card: oklch(0.16 0.05 280);
-  --card-foreground: oklch(0.95 0.02 260);
-  --popover: oklch(0.16 0.05 280);
-  --popover-foreground: oklch(0.95 0.02 260);
-  --primary: oklch(0.6 0.15 280);
-  /* Lighter Purple for dark mode */
-  --primary-foreground: oklch(0.12 0.04 280);
-  --secondary: oklch(0.25 0.08 280);
-  --secondary-foreground: oklch(0.95 0.02 260);
-  --muted: oklch(0.25 0.08 280);
-  --muted-foreground: oklch(0.7 0.05 280);
-  --accent: oklch(0.75 0.18 80);
-  /* Bright Gold */
-  --accent-foreground: oklch(0.12 0.04 280);
+  --background: oklch(0.14 0.04 340);
+  /* 深いローズブラウン - 夜空 */
+  --foreground: oklch(0.95 0.02 350);
+  --card: oklch(0.18 0.04 340);
+  --card-foreground: oklch(0.95 0.02 350);
+  --popover: oklch(0.18 0.04 340);
+  --popover-foreground: oklch(0.95 0.02 350);
+  --primary: oklch(0.75 0.18 350);
+  /* 明るいローズピンク */
+  --primary-foreground: oklch(0.14 0.04 340);
+  --secondary: oklch(0.65 0.15 300);
+  /* 明るいラベンダー */
+  --secondary-foreground: oklch(0.95 0.02 350);
+  --muted: oklch(0.25 0.06 340);
+  --muted-foreground: oklch(0.7 0.04 350);
+  --accent: oklch(0.72 0.15 300);
+  /* ソフトパープル */
+  --accent-foreground: oklch(0.14 0.04 340);
   --destructive: oklch(0.6 0.18 25);
-  --border: oklch(1 0 0 / 15%);
-  --input: oklch(1 0 0 / 18%);
-  --ring: oklch(0.6 0.15 280);
-  --chart-1: oklch(0.6 0.15 280);
-  --chart-2: oklch(0.75 0.18 80);
-  --chart-3: oklch(0.8 0.1 280);
-  --chart-4: oklch(0.6 0.2 80);
-  --chart-5: oklch(0.5 0.1 280);
-  --sidebar: oklch(0.16 0.05 280);
-  --sidebar-foreground: oklch(0.95 0.02 260);
-  --sidebar-primary: oklch(0.6 0.15 280);
-  --sidebar-primary-foreground: oklch(0.12 0.04 280);
-  --sidebar-accent: oklch(0.25 0.08 280);
-  --sidebar-accent-foreground: oklch(0.95 0.02 260);
-  --sidebar-border: oklch(1 0 0 / 15%);
-  --sidebar-ring: oklch(0.6 0.15 280);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.75 0.18 350);
+  --chart-1: oklch(0.75 0.18 350);
+  --chart-2: oklch(0.65 0.15 300);
+  --chart-3: oklch(0.8 0.1 350);
+  --chart-4: oklch(0.6 0.18 300);
+  --chart-5: oklch(0.55 0.1 340);
+  --sidebar: oklch(0.18 0.04 340);
+  --sidebar-foreground: oklch(0.95 0.02 350);
+  --sidebar-primary: oklch(0.75 0.18 350);
+  --sidebar-primary-foreground: oklch(0.14 0.04 340);
+  --sidebar-accent: oklch(0.25 0.06 340);
+  --sidebar-accent-foreground: oklch(0.95 0.02 350);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: oklch(0.75 0.18 350);
   --shadow-mystic: 0 10px 30px -5px oklch(0 0 0 / 40%), 0 5px 15px -5px oklch(0 0 0 / 20%);
 }
 
@@ -175,17 +176,17 @@
 
   /* Markdown Content Typography */
   .markdown-content {
-    @apply text-slate-700 dark:text-slate-300 leading-[1.7] text-base md:text-lg;
+    @apply text-foreground/80 leading-[1.7] text-base md:text-lg;
     overflow-wrap: break-word;
     word-break: break-word;
   }
 
   .markdown-content h1 {
-    @apply text-2xl md:text-4xl font-black mt-16 md:mt-20 mb-8 md:mb-10 text-slate-900 dark:text-white leading-tight;
+    @apply text-2xl md:text-4xl font-black mt-16 md:mt-20 mb-8 md:mb-10 text-foreground leading-tight;
   }
 
   .markdown-content h2 {
-    @apply text-xl md:text-3xl font-black mt-12 md:mt-16 mb-6 md:mb-8 pb-3 md:pb-4 border-b-2 border-primary/10 flex items-center gap-3 md:gap-4 text-slate-900 dark:text-white tracking-tight leading-tight;
+    @apply text-xl md:text-3xl font-black mt-12 md:mt-16 mb-6 md:mb-8 pb-3 md:pb-4 border-b-2 border-primary/10 flex items-center gap-3 md:gap-4 text-foreground tracking-tight leading-tight;
   }
 
   .markdown-content h2::before {
@@ -194,11 +195,11 @@
   }
 
   .markdown-content h3 {
-    @apply text-lg md:text-2xl font-black mt-8 md:mt-12 mb-4 md:mb-6 pl-4 md:pl-5 border-l-4 border-accent text-slate-800 dark:text-slate-100 leading-snug;
+    @apply text-lg md:text-2xl font-black mt-8 md:mt-12 mb-4 md:mb-6 pl-4 md:pl-5 border-l-4 border-accent text-foreground/90 leading-snug;
   }
 
   .markdown-content h4 {
-    @apply text-base md:text-xl font-bold mt-6 md:mt-8 mb-3 md:mb-4 text-slate-800 dark:text-slate-200;
+    @apply text-base md:text-xl font-bold mt-6 md:mt-8 mb-3 md:mb-4 text-foreground/90;
   }
 
   .markdown-content p {
@@ -222,15 +223,15 @@
   }
 
   .markdown-content ol li {
-    @apply text-slate-800 dark:text-slate-200 font-normal;
+    @apply text-foreground/80 font-normal;
   }
 
   .markdown-content blockquote {
-    @apply my-8 p-8 md:p-10 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-sm italic text-slate-600 dark:text-slate-400;
+    @apply my-8 p-8 md:p-10 bg-card rounded-[2.5rem] border border-border/50 shadow-sm italic text-foreground/70;
   }
 
   .markdown-content hr {
-    @apply my-12 border-slate-100 dark:border-slate-800;
+    @apply my-12 border-border/20;
   }
 
   .markdown-content p a,
@@ -241,12 +242,12 @@
 
   /* Semantic Guide Cards - Responsive Flattening */
   .guide-card {
-    @apply p-0 py-6 bg-transparent rounded-none border-b border-slate-100 dark:border-slate-800 shadow-none transition-all;
+    @apply p-0 py-6 bg-transparent rounded-none border-b border-border/30 shadow-none transition-all;
   }
 
   @screen md {
     .guide-card {
-      @apply p-8 bg-white dark:bg-slate-900 rounded-[2.5rem] border-2 border-slate-200/80 dark:border-slate-800 shadow-mystic hover:shadow-xl hover:-translate-y-1;
+      @apply p-8 bg-card rounded-[2.5rem] border-2 border-border/40 shadow-mystic hover:shadow-xl hover:-translate-y-1;
     }
   }
 
@@ -267,7 +268,7 @@
   }
 
   .guide-step-number {
-    @apply flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-primary/10 md:bg-white md:dark:bg-slate-900 border-none md:border md:border-slate-200 md:dark:border-slate-700 text-primary rounded-full md:rounded-xl flex items-center justify-center font-black text-lg;
+    @apply flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-primary/10 md:bg-card border-none md:border md:border-border/60 text-primary rounded-full md:rounded-xl flex items-center justify-center font-black text-lg;
   }
 
   /* Decorative Utilities for Cards */

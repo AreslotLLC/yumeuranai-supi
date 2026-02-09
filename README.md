@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 夢と占い.jp (yumetouranai.jp)
 
-## Getting Started
+あなたの夢には意味があります。動物、人物、シチュエーションなど、夢の内容から深層心理や未来を読み解く日本最大級の夢占いポータルサイト。
 
-First, run the development server:
+## プロジェクト概要
+
+このプロジェクトは、Next.js (App Router) をベースとした高機能な夢占い辞書・ガイドサイトです。コンテンツ管理には Airtable を使用し、動的でスケーラブルな情報提供を実現しています。
+
+## 技術スタック
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Content CMS**: [Airtable](https://airtable.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Components**: Radix UI / shadcn/ui base
+- **Search**: Client-side & Filtered Airtable Queries
+
+## 開発の進め方
+
+### 1. 環境設定
+
+プロジェクトのルートディレクトリに `.env.local` ファイルを作成し、以下の情報を設定してください。
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+NEXT_PUBLIC_BASE_URL=https://yumetouranai.jp
+AIRTABLE_API_KEY=your_api_key
+AIRTABLE_BASE_ID=your_base_id
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. 開発サーバーの起動
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+ブラウザで [http://localhost:3000](http://localhost:3000) を開き、動作を確認します。
 
-## Learn More
+### 3. デプロイ
 
-To learn more about Next.js, take a look at the following resources:
+Vercel などのプラットフォームへのデプロイを推奨します。デプロイの際は、環境変数の設定を忘れないようにしてください。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## サイト構造
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `/`: ホームページ（検索・最新ガイド・カテゴリ）
+- `/contents`: 夢占い辞典（カテゴリ別・五十音索引）
+- `/guide`: 夢占い完全ガイド（トピッククラスター）
+- `/about`: 運営者情報
+- `/privacy-policy`: プライバシーポリシー
+- `/disclaimer`: 免責事項
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© 2026 夢と占い.jp / Areslot LLC.

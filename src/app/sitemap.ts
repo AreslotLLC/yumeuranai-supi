@@ -35,14 +35,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         {
             url: `${baseUrl}/contents`,
             lastModified: new Date(),
-            changeFrequency: "weekly",
-            priority: 0.9,
+            changeFrequency: "daily",
+            priority: 1.0, // 辞書トップは最優先
         },
         {
             url: `${baseUrl}/keywords`,
             lastModified: new Date(),
-            changeFrequency: "weekly",
-            priority: 0.8,
+            changeFrequency: "daily",
+            priority: 1.0, // 索引も最優先
         },
     ];
 
@@ -77,8 +77,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             const category = (Array.isArray(content.category) ? content.category[0] : content.category) || "uncategorized";
             return {
                 url: `${baseUrl}/contents/${encodeURIComponent(category)}/${encodeURIComponent(content.slug)}`,
-                lastModified: new Date(),
-                changeFrequency: "weekly" as const,
+                lastModified: content.updatedAt ? new Date(content.updatedAt) : new Date(),
+                changeFrequency: "monthly" as const,
                 priority: 0.8,
             };
         });

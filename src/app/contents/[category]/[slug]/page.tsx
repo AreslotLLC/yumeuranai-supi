@@ -8,7 +8,7 @@ import remarkBreaks from "remark-breaks";
 import { getDreamContentBySlug, getDreamContentsByCategory, getDreamContents, resolveCategoryName, getAffiliateAd, getAffiliateAds } from "@/lib/airtable";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { siteConfig } from "@/lib/siteConfig";
-import { ArticleSchema, BreadcrumbSchema } from "@/components/seo";
+import { ArticleSchema, BreadcrumbSchema, DefinedTermSchema } from "@/components/seo";
 import { SocialShare } from "@/components/common/SocialShare";
 import { TableOfContents, TocItem } from "@/components/article/TableOfContents";
 import { BannerSlot } from "@/components/article/BannerSlot";
@@ -137,6 +137,13 @@ export default async function ContentPage({ params }: ContentPageProps) {
                 modifiedTime={content.updatedAt}
                 categoryName={displayCategory}
                 aboutName={content.title}
+            />
+            <DefinedTermSchema
+                name={content.title}
+                description={content.metaDescription || content.description || `${content.title}の夢占いの意味を詳しく解説しています。`}
+                url={`${siteConfig.baseUrl}/contents/${encodedCategoryName}/${encodedSlug}`}
+                termSetUrl={`${siteConfig.baseUrl}/contents`}
+                termSetName={`${siteConfig.name} 夢占い辞典`}
             />
             <BreadcrumbSchema
                 items={[

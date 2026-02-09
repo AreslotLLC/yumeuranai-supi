@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { GuideFooter } from "@/components/article/GuideFooter";
 
 export const metadata = {
-    title: "怖い夢（悪夢）を見る理由と心理：繰り返し見る夢を止めるための対処法",
+    title: "「悪夢」を癒やす：闇夜の奥に眠る光 | 夢と占い.jp",
     description: "追いかけられる、落ちる、歯が抜ける……。悪夢が教えるストレスの正体と、心のSOSを読み解くヒント。精神科領域でも注目される「イメージ変換法」などの改善策も解説。",
     alternates: {
         canonical: `${siteConfig.baseUrl}/guide/nightmare-psychology`,
@@ -17,21 +17,22 @@ export default function Page() {
     return (
         <GuideArticle
             slug="nightmare-psychology"
-            title="悪夢の心理学"
-            fullTitle={metadata.title}
+            title="「悪夢」を癒やす"
+            fullTitle="闇夜の奥に眠る、癒やしの光。悪夢が教える魂のSOSと、静かな眠りを守る魔法"
             description={metadata.description}
             image="/images/guide/nightmare.png"
-            category="深層心理と感情"
+            category="心の奥底への旅路"
             publishedDate="2026-01-30"
         >
             <div className="markdown-content">
                 <section className="mb-10">
-                    <p className="text-xl leading-relaxed text-slate-600 dark:text-slate-400 font-medium text-center max-w-3xl mx-auto">
-                        「嫌な汗をかいて目覚める夜」は、決して心地よいものではありません。しかし、悪夢は心のSOSであり、それを読み解くことで本当の癒やしが始まります。
+                    <p className="text-xl leading-relaxed text-slate-600 dark:text-slate-400 font-medium text-center max-w-3xl mx-auto border border-primary/20 p-8 rounded-[2rem] bg-primary/5 italic">
+                        「暗い森で迷い、嫌な汗をかいて目覚める夜」<br />
+                        それは、あなたの魂が懸命に送っている、切実な愛のメッセージかもしれません。悪夢という闇を優しく見つめ、その奥に眠る光を読み解くことで、本当の癒やしが静かに始まります。
                     </p>
                 </section>
 
-                <h2 className="text-3xl font-black mt-12 mb-6 border-none p-0 leading-tight">よく見る悪夢「4つの正体」</h2>
+                <h2 className="text-3xl font-black mt-12 mb-6 border-none p-0 leading-tight">闇夜が語りかける、4つの秘密</h2>
                 <div className="grid md:grid-cols-2 gap-8 mb-12">
                     {[
                         {
@@ -101,7 +102,7 @@ export default function Page() {
                     </p>
                 </section>
 
-                <h2 className="text-3xl font-black mt-12 mb-8 border-none p-0 leading-tight">悪夢を止めるための対処法</h2>
+                <h2 className="text-3xl font-black mt-12 mb-8 border-none p-0 leading-tight">闇夜をそっと癒やす、穏やかな魔法</h2>
                 <div className="space-y-6 mb-12">
                     {[
                         { t: "イメージ変換法（IRM）", d: "目覚めた後、夢の結末をハッピーエンドに意図的に書き換えます。「怪物が犬になった」など、脳の記憶をポジティブに塗り替えます。" },
