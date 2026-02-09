@@ -1,46 +1,68 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
 import rehypeSlug from "rehype-slug";
+import { AffiliateAd } from "@/types";
+import { AffiliateTextButton } from "./article/AffiliateTextButton";
 
 interface MarkdownContentProps {
     content: string;
     className?: string;
     bannerHtml?: string;
+    textAds?: AffiliateAd[];
 }
 
 export function MarkdownContent({
     content,
     className = "",
     bannerHtml,
+    textAds = [],
 }: MarkdownContentProps) {
+    // 広告のサイクル表示用カウンタ
+    const [adIndex, setAdIndex] = useState(0);
+
     // contentが文字列でない場合は空文字列に変換
     const safeContent = typeof content === 'string' ? content : '';
     // リテラルの \n を実際の改行文字に変換（Airtable等からのエスケープ対策）
     const sanitizedContent = safeContent ? safeContent.replace(/\\n/g, "\n") : "";
 
-    // バナーの自動挿入ロジック (3つ目と5つ目のh2の前)
+    // バナーとテキスト広告の自動挿入ロジック
     let processedContent = sanitizedContent;
-    if (bannerHtml) {
-        const lines = sanitizedContent.split("\n");
-        let h2Count = 0;
-        const resultLines: string[] = [];
-        const injectionPoints = [3, 5];
+    
+    const lines = sanitizedContent.split("\n");
+    let sectionCount = 0;
+    const resultLines: string[] = [];
+    const bannerInjectionPoints = [3, 5];
 
-        lines.forEach((line) => {
-            if (line.startsWith("## ")) {
-                h2Count++;
-                if (injectionPoints.includes(h2Count)) {
-                    resultLines.push("\n```banner\n```\n");
-                }
+    lines.forEach((line, index) => {
+        // 次の行の見出しチェック（セクションの終了判定）
+        const nextLine = lines[index + 1] || "";
+        const isHeader = line.startsWith("## ") || line.startsWith("### ");
+        const isNextHeader = nextLine.startsWith("## ") || nextLine.startsWith("### ");
+
+        resultLines.push(line);
+
+        // h2バナーの挿入（既存ロジック維持）
+        if (line.startsWith("## ")) {
+            const h2Count = resultLines.filter(l => l.startsWith("## ")).length;
+            if (bannerHtml && bannerInjectionPoints.includes(h2Count)) {
+                resultLines.push("\n```banner\n```\n");
             }
-            resultLines.push(line);
-        });
-        processedContent = resultLines.join("\n");
-    }
+        }
+
+        // テキスト広告の挿入（セクション終了直後）
+        // 次が見出しか、または記事の最後である場合に挿入候補とする
+        if (textAds.length > 0 && (isNextHeader || index === lines.length - 1)) {
+            // 見出しの後、かつ中身がある程度ある場合に挿入（極端に短いセクションの連続を避けるため、簡易的に空行等を除外）
+            // ここではシンプルに「セクションが終わったタイミング」で必ず挿入ブロックを入れる
+            resultLines.push("\n```text-ad\n```\n");
+        }
+    });
+    processedContent = resultLines.join("\n");
 
     // 太字 (**) と日本語の括弧 (「 」) が隣接するとパースに失敗する問題への対策
     processedContent = processedContent
@@ -118,7 +140,7 @@ export function MarkdownContent({
                         if (className === "language-banner" && bannerHtml) {
                             return (
                                 <div className="my-8 md:my-12 flex flex-col md:flex-row items-center justify-center gap-4">
-                                    {/* 1つ目のバナー */}
+                                    {/* ...既存のバナー表示コード（省略せずそのまま維持） */}
                                     <div className="relative w-full max-w-[300px] mx-auto md:mx-0 overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800 rounded-lg">
                                         <span className="absolute bottom-1 right-1 px-1 py-0.5 text-[8px] font-bold text-slate-400 dark:text-slate-500 bg-white/80 dark:bg-slate-800/80 rounded z-10 pointer-events-none">
                                             PR
@@ -129,7 +151,6 @@ export function MarkdownContent({
                                         />
                                     </div>
 
-                                    {/* 2つ目のバナー (デスクトップのみ) */}
                                     <div className="hidden md:block relative w-full max-w-[300px] md:mx-0 overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800 rounded-lg">
                                         <span className="absolute bottom-1 right-1 px-1 py-0.5 text-[8px] font-bold text-slate-400 dark:text-slate-500 bg-white/80 dark:bg-slate-800/80 rounded z-10 pointer-events-none">
                                             PR
@@ -141,6 +162,13 @@ export function MarkdownContent({
                                     </div>
                                 </div>
                             );
+                        }
+
+                        // テキスト広告挿入用の特殊コードブロック
+                        if (className === "language-text-ad" && textAds.length > 0) {
+                            // クライアントサイドでのみサイクルを回すための工夫
+                            // コンポーネント内で現在のインデックスを決定
+                            return <AdCycleWrapper textAds={textAds} />;
                         }
 
                         return (
@@ -195,4 +223,18 @@ export function MarkdownContent({
             </ReactMarkdown>
         </div>
     );
+}
+
+/**
+ * 広告のサイクル表示を管理するヘルパーコンポーネント（クロージャ的にインデックスを保持）
+ */
+let globalAdCounter = 0;
+function AdCycleWrapper({ textAds }: { textAds: AffiliateAd[] }) {
+    const [index] = useState(() => {
+        const currentIndex = globalAdCounter % textAds.length;
+        globalAdCounter++;
+        return currentIndex;
+    });
+
+    return <AffiliateTextButton ad={textAds[index]} />;
 }

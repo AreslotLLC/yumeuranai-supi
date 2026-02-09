@@ -2,16 +2,15 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Moon, Sun, Sparkles, MessageCircle, ArrowRight } from "lucide-react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import remarkBreaks from "remark-breaks";
-import { getDreamContentBySlug, getDreamContentsByCategory, getDreamContents, resolveCategoryName, getAffiliateAd, getAffiliateAds } from "@/lib/airtable";
+import { getDreamContentBySlug, getDreamContentsByCategory, getDreamContents, resolveCategoryName, getAffiliateAd, getAffiliateAds, getTextAffiliateAds } from "@/lib/airtable";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { siteConfig } from "@/lib/siteConfig";
 import { ArticleSchema, BreadcrumbSchema, DefinedTermSchema } from "@/components/seo";
 import { SocialShare } from "@/components/common/SocialShare";
 import { TableOfContents, TocItem } from "@/components/article/TableOfContents";
 import { BannerSlot } from "@/components/article/BannerSlot";
+import { MarkdownContent } from "@/components/MarkdownContent";
+import { AffiliateTextButton } from "@/components/article/AffiliateTextButton";
 import { uiStrings } from "@/constants/uiStrings";
 
 interface ContentPageProps {
@@ -212,27 +211,21 @@ export default async function ContentPage({ params }: ContentPageProps) {
                             </div>
                             <div className="markdown-content">
                                 <p className="text-lg md:text-xl leading-relaxed mb-8 font-medium text-slate-900 dark:text-white">
-                                    {content.symbolism ? content.symbolism.replace(/\\n/g, "\n") : uiStrings.dictionary.detail.symbolismDefault(content.title)}
                                 </p>
+
+                                {/* 象徴（Symbolism）セクションの直後に1枚目のテキスト広告を固定表示 */}
+                                {textAds.length > 0 && (
+                                    <div className="mt-8">
+                                        <AffiliateTextButton ad={textAds[0]} />
+                                    </div>
+                                )}
+
                                 {content.article && (
                                     <div className="mt-12 pt-12 border-t border-slate-100 dark:border-slate-800">
-                                        <ReactMarkdown
-                                            remarkPlugins={[remarkGfm, remarkBreaks]}
-                                            components={{
-                                                h2: ({ ...props }) => {
-                                                    const text = String(props.children);
-                                                    const id = `heading-${text.toLowerCase().replace(/[^\w\u4e00-\u9fa5ぁ-んァ-ンー]/g, "-")}`;
-                                                    return <h2 id={id} {...props} />;
-                                                },
-                                                h3: ({ ...props }) => {
-                                                    const text = String(props.children);
-                                                    const id = `heading-${text.toLowerCase().replace(/[^\w\u4e00-\u9fa5ぁ-んァ-ンー]/g, "-")}`;
-                                                    return <h3 id={id} {...props} />;
-                                                }
-                                            }}
-                                        >
-                                            {preprocessMarkdown(content.article.replace(/\\n/g, "\n"))}
-                                        </ReactMarkdown>
+                                        <MarkdownContent 
+                                            content={content.article.replace(/\\n/g, "\n")} 
+                                            textAds={textAds}
+                                        />
                                     </div>
                                 )}
                             </div>

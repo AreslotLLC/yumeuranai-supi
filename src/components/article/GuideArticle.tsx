@@ -3,8 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Library } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { getGuides, getAffiliateAds } from "@/lib/airtable";
+import { getGuides, getAffiliateAds, getTextAffiliateAds } from "@/lib/airtable";
 import { BannerSlot } from "@/components/article/BannerSlot";
+import { AffiliateTextButton } from "@/components/article/AffiliateTextButton";
 import { SafeImage } from "@/components/common/SafeImage";
 import { Hero } from "@/components/common/Hero";
 import { guideCategories, siteConfig } from "@/lib/siteConfig";
@@ -55,6 +56,9 @@ export async function GuideArticle({
         tags
     });
 
+    // テキスト広告の取得
+    const textAds = await getTextAffiliateAds(tags);
+
     return (
         <div className="min-h-screen bg-background text-foreground">
             <ArticleSchema
@@ -100,6 +104,10 @@ export async function GuideArticle({
 
                             {/* 記事下広告エリア */}
                             <div className="mt-12 space-y-8">
+                                {/* テキストリンク1枚目を優先表示 */}
+                                {textAds.length > 0 && (
+                                    <AffiliateTextButton ad={textAds[0]} />
+                                )}
                                 {horizontalAd && <BannerSlot ad={horizontalAd} />}
                                 {squareAd && <BannerSlot ad={squareAd} />}
                             </div>

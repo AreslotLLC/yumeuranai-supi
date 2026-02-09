@@ -379,7 +379,8 @@ export async function getAffiliateAds(options: {
         const typeMapping: Record<string, string> = {
             'Square': '正方形',
             'Horizontal': '横長',
-            'Vertical': '縦長'
+            'Vertical': '縦長',
+            'Text': 'テキスト'
         };
 
         // 全ての公開済み広告を取得
@@ -446,6 +447,72 @@ export async function getAffiliateAds(options: {
         return options.requirements.map(() => null);
     }
 }
+
+/**
+ * テキストアフィリエイト広告を最大3枚取得
+ */
+export async function getTextAffiliateAds(tags?: string[]): Promise<AffiliateAd[]> {
+    if (!isAirtableConfigured) return [];
+
+    try {
+        // 全ての公開済みテキスト広告を取得
+        const records = await fetchAirtable(AFFILIATE_TABLE, {
+            filterByFormula: `AND({Status} = "${STATUS_PUBLISHED}", {${FIELDS.BANNER_TYPE}} = "テキスト")`
+        });
+
+        const allTextAds: AffiliateAd[] = records.map(mapRecordToAffiliateAd);
+        if (allTextAds.length === 0) return [];
+
+        const results: AffiliateAd[] = [];
+        const usedIds = new Set<string>();
+
+        // 1. タグ一致 (優先)
+        if (tags && tags.length > 0) {
+            const tagMatchedAds = allTextAds.filter(ad =>
+                ad.targetTag && tags.includes(ad.targetTag)
+            );
+            // ランダムに並び替えて先頭から最大3つ
+            const shuffledTags = [...tagMatchedAds].sort(() => Math.random() - 0.5);
+            for (const ad of shuffledTags) {
+                if (results.length < 3) {
+                    results.push(ad);
+                    usedIds.add(ad.id);
+                }
+            }
+        }
+
+        // 2. デフォルト広告 (IsDefault=true)
+        if (results.length < 3) {
+            const defaultAds = allTextAds.filter(ad => ad.isDefault && !usedIds.has(ad.id));
+            const shuffledDefaults = [...defaultAds].sort(() => Math.random() - 0.5);
+            for (const ad of shuffledDefaults) {
+                if (results.length < 3) {
+                    results.push(ad);
+                    usedIds.add(ad.id);
+                }
+            }
+        }
+
+        // 3. 残りの枠を全テキスト広告からランダムで埋める
+        if (results.length < 3) {
+            const remainingAds = allTextAds.filter(ad => !usedIds.has(ad.id));
+            const shuffledRemaining = [...remainingAds].sort(() => Math.random() - 0.5);
+            for (const ad of shuffledRemaining) {
+                if (results.length < 3) {
+                    results.push(ad);
+                    usedIds.add(ad.id);
+                }
+            }
+        }
+
+        return results;
+
+    } catch (error) {
+        console.error("Failed to fetch text affiliate ads:", error);
+        return [];
+    }
+}
+
 
 /**
  * 条件に一致するアフィリエイト広告を1つ取得 (後方互換性のため)
@@ -575,7 +642,9 @@ function mapRecordToAffiliateAd(record: AirtableRecord): AffiliateAd {
             '縦長': 'Vertical',
             'Square': 'Square',
             'Horizontal': 'Horizontal',
-            'Vertical': 'Vertical'
+            'Vertical': 'Vertical',
+            'テキスト': 'Text',
+            'Text': 'Text'
         };
         return map[val] || (val as 'Square' | 'Horizontal' | 'Vertical');
     };

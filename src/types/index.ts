@@ -77,7 +77,7 @@ export interface AffiliateAd {
   id: string;
   name: string;
   bannerHtml: string;
-  bannerType: 'Square' | 'Horizontal' | 'Vertical';
+  bannerType: 'Square' | 'Horizontal' | 'Vertical' | 'Text';
   targetTag?: string;
   status: string;
 
@@ -151,7 +151,7 @@ export interface AirtableAffiliateRecord {
   fields: {
     Name: string;
     BannerHtml: string;
-    BannerType: 'Square' | 'Horizontal' | 'Vertical';
+    BannerType: 'Square' | 'Horizontal' | 'Vertical' | 'Text';
     TargetTag?: string;
     Status: string;
 
