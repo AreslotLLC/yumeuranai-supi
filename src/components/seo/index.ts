@@ -7,4 +7,6 @@ export {
     OrganizationSchema,
     ItemListSchema,
     SiteNavigationSchema,
+    DefinedTermSchema,
+    DefinedTermSetSchema,
 } from "./JsonLd";
