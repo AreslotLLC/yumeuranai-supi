@@ -89,11 +89,26 @@ export default async function ContentPage({ params }: ContentPageProps) {
 
     if (!content) notFound();
 
-    // 関連キーワードなどの取得 (最初のカテゴリを使って関連を取得)
-    const primaryCategory = Array.isArray(content.category) ? content.category[0] : content.category;
-    const relatedContents = primaryCategory
-        ? (await getDreamContentsByCategory(primaryCategory)).filter(c => c.slug !== slug).slice(0, 6)
-        : [];
+    // 関連キーワードの取得
+    // 1. AirtableのrelatedKeywordsフィールドがある場合はそれを優先（タイトル一致で検索）
+    // 2. 足りない分を同じカテゴリから補充
+    let relatedContents: any[] = [];
+
+    if (content.relatedKeywords && content.relatedKeywords.length > 0) {
+        // Airtableからキーワード名で情報を取得
+        const allKeywords = await getDreamContents(); // キャッシュされる
+        relatedContents = allKeywords.filter(k =>
+            content.relatedKeywords?.includes(k.title) && k.slug !== slug
+        ).slice(0, 6);
+    }
+
+    if (relatedContents.length < 6 && primaryCategory) {
+        const categoryContents = await getDreamContentsByCategory(primaryCategory);
+        const fillers = categoryContents
+            .filter(c => c.slug !== slug && !relatedContents.some(r => r.id === c.id))
+            .slice(0, 6 - relatedContents.length);
+        relatedContents = [...relatedContents, ...fillers];
+    }
 
     // アフィリエイト広告の取得（記事のタグに基づく）
     const tags = content.tags || [];
@@ -222,8 +237,8 @@ export default async function ContentPage({ params }: ContentPageProps) {
 
                                 {content.article && (
                                     <div className="mt-12 pt-12 border-t border-slate-100 dark:border-slate-800">
-                                        <MarkdownContent 
-                                            content={content.article.replace(/\\n/g, "\n")} 
+                                        <MarkdownContent
+                                            content={content.article.replace(/\\n/g, "\n")}
                                             textAds={textAds}
                                         />
                                     </div>
@@ -298,15 +313,19 @@ export default async function ContentPage({ params }: ContentPageProps) {
                                     {uiStrings.dictionary.detail.relatedTitle}
                                 </h2>
                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                                    {relatedContents.map((rel) => (
-                                        <Link
-                                            key={rel.id}
-                                            href={`/contents/${encodedCategoryName}/${rel.slug}`}
-                                            className="p-5 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 text-center transition-all shadow-sm hover:shadow-xl"
-                                        >
-                                            <span className="font-bold text-slate-800 dark:text-slate-200">{rel.title}</span>
-                                        </Link>
-                                    ))}
+                                    {relatedContents.map((rel) => {
+                                        const relCat = Array.isArray(rel.category) ? rel.category[0] : rel.category;
+                                        const relCatName = relCat || "uncategorized";
+                                        return (
+                                            <Link
+                                                key={rel.id}
+                                                href={`/contents/${encodeURIComponent(relCatName)}/${rel.slug}`}
+                                                className="p-5 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 text-center transition-all shadow-sm hover:shadow-xl group"
+                                            >
+                                                <span className="font-bold text-slate-800 dark:text-slate-200 group-hover:text-primary transition-colors">{rel.title}</span>
+                                            </Link>
+                                        );
+                                    })}
                                 </div>
                             </div>
                         )}
