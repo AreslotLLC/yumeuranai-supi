@@ -28,7 +28,7 @@ export function Hero({
                 {/* 背景画像 */}
                 <SafeImage
                     src={image}
-                    alt={typeof title === "string" ? title : "Hero Image"}
+                    alt={typeof title === "string" ? title : "夢占い・夢診断 - 夢と占い.jp"}
                     fill
                     priority
                     className="object-cover"

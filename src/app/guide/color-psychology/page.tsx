@@ -4,13 +4,30 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { GuideFooter } from "@/components/article/GuideFooter";
 import { siteConfig } from "@/lib/siteConfig";
 import { GuideArticle } from "@/components/article/GuideArticle";
+import { FAQSchema } from "@/components/seo";
 
 export const metadata: Metadata = {
     title: `「夢の色」が語る心理：夢を彩る七色の魔法 | 夢と占い.jp`,
     description: "夢の景色を鮮やかに彩る、七色の魔法。赤、青、金、白など、夢の中の印象的な「色」が伝えるあなたの深層心理と運気のメッセージを詳しく解説します。",
+    alternates: {
+        canonical: `${siteConfig.baseUrl}/guide/color-psychology`,
+    },
+    // @ts-ignore
+    lastModified: new Date().toISOString(),
 };
 
 export default function ColorPsychologyPage() {
+    const faqs = [
+        {
+            question: "夢の色が途中で変わった場合はどうすればいいですか？",
+            answer: "状況や感情の変化を表しています。最初の色は「原因」や「現在の出発点」、後の色は「解決策」や「向かうべき方向」を暗示することが多いです。"
+        },
+        {
+            question: "特定の色だけがモノクロの夢の中でカラーでした。",
+            answer: "それは潜在意識からの非常に強いメッセージです。その色の象徴する意味が、今のあなたの人生において最も重要な鍵を握っています。"
+        }
+    ];
+
     return (
         <GuideArticle
             slug="color-psychology"
@@ -21,6 +38,7 @@ export default function ColorPsychologyPage() {
             category="万象が語る物語"
             publishedDate="2026-01-30"
         >
+            <FAQSchema questions={faqs} />
             <div className="markdown-content">
                 <section>
                     <blockquote className="text-center max-w-3xl mx-auto italic font-medium text-primary/80">

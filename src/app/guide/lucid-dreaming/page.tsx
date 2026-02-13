@@ -3,13 +3,33 @@ import { siteConfig } from "@/lib/siteConfig";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { GuideFooter } from "@/components/article/GuideFooter";
+import { FAQSchema } from "@/components/seo";
 
 export const metadata = {
     title: `「明晰夢」の旅：夢の国を自由に泳いで | 夢と占い.jp`,
     description: "夢の国を、思うままに自由に泳いで。意識を研ぎ澄まし、夢の主役になるための具体的なテクニックやトレーニング方法を徹底解説します。",
+    alternates: {
+        canonical: `${siteConfig.baseUrl}/guide/lucid-dreaming`,
+    },
+    lastModified: new Date().toISOString(),
 };
 
 export default function LucidDreamingPage() {
+    const faqs = [
+        {
+            question: "誰でも体験できるようになりますか？",
+            answer: "はい。個人差はありますが、RC法を習慣化することで、数週間から数ヶ月で初めての明晰夢を体験する方が多いです。"
+        },
+        {
+            question: "明晰夢から覚められなくなることはありますか？",
+            answer: "医学的にそのような事例はありません。睡眠サイクル（レム睡眠）は一定時間で終わるため、必ず自然に目が覚めます。むしろ最初は「起きたくないのに起きてしまう」ことの方が多いでしょう。"
+        },
+        {
+            question: "現実と夢の区別がつかなくなりますか？",
+            answer: "RC法を正しく行えば、むしろ「今が現実である確信」が高まります。ただし、睡眠の質が落ちたと感じたら、一旦練習を休んでください。"
+        }
+    ];
+
     return (
         <GuideArticle
             slug="lucid-dreaming"
@@ -20,6 +40,7 @@ export default function LucidDreamingPage() {
             category="夢の扉を開く鍵"
             publishedDate="2026-01-30"
         >
+            <FAQSchema questions={faqs} />
             <div className="markdown-content">
                 <section>
                     <blockquote className="text-center max-w-3xl mx-auto border-l-4 border-amber-400 py-4 px-8 bg-amber-400/5 rounded-r-3xl italic">

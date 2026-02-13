@@ -107,6 +107,8 @@ export default async function ContentPage({ params }: ContentPageProps) {
         tags
     });
 
+    const textAds = await getTextAffiliateAds(tags);
+
     const encodedCategoryName = encodeURIComponent(displayCategory);
     const encodedSlug = encodeURIComponent(slug);
 

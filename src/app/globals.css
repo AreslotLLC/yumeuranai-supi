@@ -245,7 +245,7 @@
     @apply p-0 py-6 bg-transparent rounded-none border-b border-border/30 shadow-none transition-all;
   }
 
-  @screen md {
+  @media (min-width: 768px) {
     .guide-card {
       @apply p-8 bg-card rounded-[2.5rem] border-2 border-border/40 shadow-mystic hover:shadow-xl hover:-translate-y-1;
     }

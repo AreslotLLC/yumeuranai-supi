@@ -4,8 +4,8 @@
   "description": "あなたの夢を解き明かす、日本最大級の夢占い・夢診断サイト",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#fce7f3",
-  "theme_color": "#e11d48",
+  "background_color": "#fff1f2",
+  "theme_color": "#ec4899",
   "icons": [
     {
       "src": "/favicon.ico",
@@ -13,8 +13,8 @@
       "type": "image/x-icon"
     },
     {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
+      "src": "/logo.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ]

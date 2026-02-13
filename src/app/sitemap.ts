@@ -64,7 +64,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // 夢キーワードカテゴリページ
     const categories = await (await import("@/lib/airtable")).getCategories();
     const categoryPages: MetadataRoute.Sitemap = categories.map((cat) => ({
-        url: `${baseUrl}/contents/${encodeURIComponent(cat.slug)}`,
+        url: `${baseUrl}/contents/${encodeURIComponent(cat.name)}`,
         lastModified: new Date(),
         changeFrequency: "weekly" as const,
         priority: 0.8,
@@ -76,7 +76,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         .map((content: DreamContent) => {
             const category = (Array.isArray(content.category) ? content.category[0] : content.category) || "uncategorized";
             return {
-                url: `${baseUrl}/contents/${encodeURIComponent(category)}/${encodeURIComponent(content.slug)}`,
+                url: `${baseUrl}/contents/${encodeURIComponent(category)}/${content.slug}`,
                 lastModified: content.updatedAt ? new Date(content.updatedAt) : new Date(),
                 changeFrequency: "monthly" as const,
                 priority: 0.8,

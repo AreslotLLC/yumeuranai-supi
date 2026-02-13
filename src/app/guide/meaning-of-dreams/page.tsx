@@ -11,6 +11,7 @@ export const metadata = {
     alternates: {
         canonical: `${siteConfig.baseUrl}/guide/meaning-of-dreams`,
     },
+    lastModified: new Date().toISOString(),
 };
 
 export default function Page() {

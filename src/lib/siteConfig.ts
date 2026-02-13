@@ -10,14 +10,18 @@ export const siteConfig = {
     publisher: "夢と占い.jp 編集部",
     keywords: [
         "夢占い",
+        "夢診断",
         "夢辞典",
+        "夢の意味",
         "深層心理",
         "予知夢",
         "悪夢",
         "スピリチュアル",
+        "心理テスト",
         "運勢",
+        "開運",
     ],
-    ogImage: "/og-image.png",
+    ogImage: "/og-image.svg", // PNGがないためSVGを指すように一旦修正
     logo: "/logo.png",
     // テンプレート化用
     topicName: "夢占い",

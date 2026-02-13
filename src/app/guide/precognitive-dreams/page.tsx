@@ -4,6 +4,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { GuideFooter } from "@/components/article/GuideFooter";
+import { FAQSchema } from "@/components/seo";
 
 export const metadata = {
     title: "「予知夢」の余韻：未来からの静かなメッセージ | 夢と占い.jp",
@@ -11,9 +12,21 @@ export const metadata = {
     alternates: {
         canonical: `${siteConfig.baseUrl}/guide/precognitive-dreams`,
     },
+    lastModified: new Date().toISOString(),
 };
 
 export default function Page() {
+    const faqs = [
+        {
+            question: "見た夢が本当に予知夢かどうか、どうすれば分かりますか？",
+            answer: "デジャヴ（既視感）を感じた時、それが夢で見た光景なら予知夢である可能性が高いです。また、夢の内容が社会的な大事件ではなく、自分自身の日常の些細なことであるほど、個人レベルの予知夢と言えます。"
+        },
+        {
+            question: "悪い予知夢を見てしまいました。回避できますか？",
+            answer: "はい。夢は「今のままの延長線上の未来」を警告として見せてくれるものです。事前に知ることで、行動や選択を変え、結果を回避することができます。"
+        }
+    ];
+
     return (
         <GuideArticle
             slug="precognitive-dreams"
@@ -24,6 +37,7 @@ export default function Page() {
             category="月影と予兆の調べ"
             publishedDate="2026-01-30"
         >
+            <FAQSchema questions={faqs} />
             <div className="markdown-content">
                 <section className="mb-10">
                     <p className="text-xl leading-relaxed text-slate-600 dark:text-slate-400 font-medium text-center max-w-3xl mx-auto border-l-4 border-primary/20 pl-8 italic">

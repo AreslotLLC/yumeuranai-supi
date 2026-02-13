@@ -635,8 +635,8 @@ function mapRecordToAffiliateAd(record: AirtableRecord): AffiliateAd {
         return String(val || "");
     };
 
-    const normalizeBannerType = (val: string): 'Square' | 'Horizontal' | 'Vertical' => {
-        const map: Record<string, 'Square' | 'Horizontal' | 'Vertical'> = {
+    const normalizeBannerType = (val: string): 'Square' | 'Horizontal' | 'Vertical' | 'Text' => {
+        const map: Record<string, 'Square' | 'Horizontal' | 'Vertical' | 'Text'> = {
             '正方形': 'Square',
             '横長': 'Horizontal',
             '縦長': 'Vertical',

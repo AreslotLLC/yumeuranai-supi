@@ -4,13 +4,34 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { GuideFooter } from "@/components/article/GuideFooter";
 import { siteConfig } from "@/lib/siteConfig";
 import { GuideArticle } from "@/components/article/GuideArticle";
+import { FAQSchema } from "@/components/seo";
 
 export const metadata: Metadata = {
     title: `「同じ夢」の調べ：魂が繰り返す旋律 | 夢と占い.jp`,
     description: "魂が何度も繰り返す、切実な愛の旋律。なぜ同じ夢を繰り返し見るのでしょうか？潜在意識が伝えようとしている「警告」とメッセージ、運気を好転させるための対処法を解説します。",
+    alternates: {
+        canonical: `${siteConfig.baseUrl}/guide/repeated-dreams`,
+    },
+    // @ts-ignore
+    lastModified: new Date().toISOString(),
 };
 
 export default function RepeatedDreamsPage() {
+    const faqs = [
+        {
+            question: "同じ夢を何度も見るのは、何か悪いことが起きる前兆ですか？",
+            answer: "必ずしも悪い前兆ではありません。多くの場合、あなたの潜在意識が「気づいてほしい重要な課題」があることを示しています。そのメッセージを理解し、現実での行動を変えることで、夢の内容も変化していきます。"
+        },
+        {
+            question: "特定の人物が何度も夢に出てくるのはなぜですか？",
+            answer: "その人物が象徴する「性質」や、その人との間に残っている「未完了の感情」が関係していることが多いです。また、人生の重要な転換点において、ガイドのような役割として特定の人物が登場することもあります。"
+        },
+        {
+            question: "怖くない夢でも、繰り返すなら注意が必要ですか？",
+            answer: "はい。穏やかな夢であっても繰り返されるなら、それはあなたの魂が望んでいる「進むべき方向」についてのヒントである可能性があります。"
+        }
+    ];
+
     return (
         <GuideArticle
             slug="repeated-dreams"
@@ -21,6 +42,7 @@ export default function RepeatedDreamsPage() {
             category="心の奥底への旅路"
             publishedDate="2026-01-29"
         >
+            <FAQSchema questions={faqs} />
             <div className="markdown-content">
                 <section>
                     <blockquote className="text-center max-w-3xl mx-auto">

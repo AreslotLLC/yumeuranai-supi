@@ -39,6 +39,9 @@ export async function generateMetadata({
     return {
         title: uiStrings.dictionary.category.metaTitle(catName),
         description: uiStrings.dictionary.category.metaDescription(catName),
+        alternates: {
+            canonical: `${siteConfig.baseUrl}/contents/${encodeURIComponent(catName)}`,
+        },
     };
 }
 

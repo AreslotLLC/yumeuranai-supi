@@ -3,6 +3,7 @@ import { Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
 import "./globals.css";
 import { Header, Footer } from "@/components/layout";
 import { siteConfig } from "@/lib/siteConfig";
+import { SiteNavigationSchema } from "@/components/seo";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -63,6 +64,9 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/manifest.json",
+  verification: {
+    google: "gvQ9TLQg9lYrADsd92oQ55X6PlVxAO9lHAMJUAcQSb8",
+  },
   robots: {
     index: true,
     follow: true,
@@ -75,7 +79,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "./",
+    canonical: siteConfig.baseUrl.endsWith("/") ? siteConfig.baseUrl : `${siteConfig.baseUrl}/`,
   },
 };
 
@@ -89,6 +93,13 @@ export default function RootLayout({
       <body className={`${notoSansJP.variable} ${notoSerifJP.variable} font-sans antialiased text-pretty`}>
 
         <div className="flex min-h-screen flex-col">
+          <SiteNavigationSchema
+            items={[
+              { name: "夢占いガイド", url: `${BASE_URL}/guide` },
+              { name: "夢辞典", url: `${BASE_URL}/contents` },
+              { name: "夢占いとは", url: `${BASE_URL}/guide/meaning-of-dreams` },
+            ]}
+          />
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />

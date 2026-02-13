@@ -4,6 +4,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import Link from "next/link";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { GuideFooter } from "@/components/article/GuideFooter";
+import { FAQSchema } from "@/components/seo";
 
 export const metadata = {
     title: "「夢を覚える」魔法：記憶の星屑を紡いで | 夢と占い.jp",
@@ -11,9 +12,21 @@ export const metadata = {
     alternates: {
         canonical: `${siteConfig.baseUrl}/guide/how-to-remember-dreams`,
     },
+    lastModified: new Date().toISOString(),
 };
 
 export default function Page() {
+    const faqs = [
+        {
+            question: "夢日記は毎日書かないといけませんか？",
+            answer: "いいえ、義務にするとストレスになり逆効果です。印象に残った時や、時間に余裕がある時だけで十分です。週に数回書くだけでも、脳の「夢を覚える回路」は確実に強化されます。"
+        },
+        {
+            question: "夢の内容がひどすぎて、書くのが辛いです。",
+            answer: "無理に書く必要はありません。もし書くなら、その時の嫌な感情（「怖かった」など）だけをメモし、すぐに紙を破って捨てる「デトックス」として活用してください。"
+        }
+    ];
+
     return (
         <GuideArticle
             slug="how-to-remember-dreams"
@@ -24,6 +37,7 @@ export default function Page() {
             category="夢の扉を開く鍵"
             publishedDate="2026-01-30"
         >
+            <FAQSchema questions={faqs} />
             <div className="markdown-content">
                 <section className="mb-10">
                     <p className="text-xl leading-relaxed text-slate-600 dark:text-slate-400 font-medium">

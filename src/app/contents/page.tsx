@@ -11,6 +11,9 @@ import { uiStrings } from "@/constants/uiStrings";
 export const metadata: Metadata = {
     title: `${uiStrings.dictionary.index.title} - ${siteConfig.topicKeyword}が教える運命のサイン | ${siteConfig.name}`,
     description: uiStrings.dictionary.search.ctaDescription,
+    alternates: {
+        canonical: `${siteConfig.baseUrl}/contents`,
+    },
 };
 
 export const revalidate = 3600;
@@ -18,7 +21,7 @@ export const revalidate = 3600;
 export default async function ContentsIndexPage() {
     const categories = await getCategories();
     // 共通の関数を使用して人気キーワードを取得
-    const popularContents = await getPopularKeywords(12);
+    const popularContents = await getPopularKeywords(30); // 12から30に拡大
 
     return (
         <div className="min-h-screen bg-slate-50 dark:bg-slate-950">

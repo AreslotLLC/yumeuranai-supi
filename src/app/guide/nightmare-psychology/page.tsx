@@ -4,6 +4,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { GuideFooter } from "@/components/article/GuideFooter";
+import { FAQSchema } from "@/components/seo";
 
 export const metadata = {
     title: "「悪夢」を癒やす：闇夜の奥に眠る光 | 夢と占い.jp",
@@ -11,9 +12,21 @@ export const metadata = {
     alternates: {
         canonical: `${siteConfig.baseUrl}/guide/nightmare-psychology`,
     },
+    lastModified: new Date().toISOString(),
 };
 
 export default function Page() {
+    const faqs = [
+        {
+            question: "悪夢を見た日は運勢が悪いのでしょうか？",
+            answer: "逆夢（さかゆめ）といって、現実では良いことが起きる兆候である場合も多いです。悪夢は脳の「掃除（デトックス）」でもあるため、むしろスッキリして新しい一日を迎えられるポジティブな側面もあります。"
+        },
+        {
+            question: "子供がひどい悪夢を怖がるときはどう接すべき？",
+            answer: "まずは「ただの夢だから大丈夫」と強く抱きしめて安心させてあげてください。そして翌朝、その怪物を「面白い姿」に描き変える遊びをすると、恐怖心が和らぎます。"
+        }
+    ];
+
     return (
         <GuideArticle
             slug="nightmare-psychology"
@@ -24,6 +37,7 @@ export default function Page() {
             category="心の奥底への旅路"
             publishedDate="2026-01-30"
         >
+            <FAQSchema questions={faqs} />
             <div className="markdown-content">
                 <section className="mb-10">
                     <p className="text-xl leading-relaxed text-slate-600 dark:text-slate-400 font-medium text-center max-w-3xl mx-auto border border-primary/20 p-8 rounded-[2rem] bg-primary/5 italic">

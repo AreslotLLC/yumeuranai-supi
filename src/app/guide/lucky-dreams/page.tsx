@@ -4,6 +4,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Star } from "lucide-react";
 import { GuideFooter } from "@/components/article/GuideFooter";
+import { FAQSchema } from "@/components/seo";
 
 export const metadata = {
     title: "「吉夢」のささやき：幸福のしずく、光への導き | 夢と占い.jp",
@@ -11,9 +12,21 @@ export const metadata = {
     alternates: {
         canonical: `${siteConfig.baseUrl}/guide/lucky-dreams`,
     },
+    lastModified: new Date().toISOString(),
 };
 
 export default function Page() {
+    const faqs = [
+        {
+            question: "吉夢を見たのに、翌日に悪いことが起きました。",
+            answer: "これは「好転反応」と呼ばれる現象かもしれません。大きな幸運が入ってくる前に、古いエネルギーが排出されるデトックス期間です。落ち込まず、前向きに構えていてください。"
+        },
+        {
+            question: "同じ吉夢を何度も見たいのですが、方法はありますか？",
+            answer: "就寝前にその夢のシーンを強く鮮明にイメージしながら眠りにつく「自己暗示」が有効です。また、そのシンボル（例えば白蛇の画像など）をスマートフォンなどの壁紙にするのも良い刺激になります。"
+        }
+    ];
+
     return (
         <GuideArticle
             slug="lucky-dreams"
@@ -24,6 +37,7 @@ export default function Page() {
             category="万象が語る物語"
             publishedDate="2026-01-30"
         >
+            <FAQSchema questions={faqs} />
             <div className="markdown-content">
                 <section>
                     <blockquote className="text-center max-w-3xl mx-auto">
