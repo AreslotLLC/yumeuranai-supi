@@ -73,18 +73,71 @@ export function Header() {
 }
 
 export function Footer() {
+    // サーバーコンポーネントではないため、ここでは定数ベースのリンクを表示
+    // 動的なデータが必要な場合は親（layout.tsx）から渡すか、useEffectで取得する
+    
+    const KANA_ROWS = [
+        { id: "あ", label: "あ" }, { id: "か", label: "か" }, { id: "さ", label: "さ" }, { id: "た", label: "た" }, { id: "な", label: "な" },
+        { id: "は", label: "は" }, { id: "ま", label: "ま" }, { id: "や", label: "や" }, { id: "ら", label: "ら" }, { id: "わ", label: "わ" },
+    ];
+
     return (
         <footer className="border-t border-border/30 bg-muted/30 transition-colors duration-300">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
                     {/* ブランドと説明 */}
-                    <div className="md:col-span-2">
+                    <div className="lg:col-span-2">
                         <Link href="/" className="text-2xl font-bold font-serif text-primary inline-block mb-6">
                             {siteConfig.name}
                         </Link>
-                        <p className="text-sm text-foreground/60 leading-relaxed mb-6 max-w-md">
+                        <p className="text-sm text-foreground/60 leading-relaxed mb-8 max-w-md">
                             {uiStrings.footer.description}
                         </p>
+                        
+                        {/* 五十音索引リンク */}
+                        <div className="mb-8">
+                            <h4 className="text-xs font-bold text-foreground/50 uppercase tracking-widest mb-4">
+                                五十音で探す
+                            </h4>
+                            <div className="flex flex-wrap gap-2">
+                                {KANA_ROWS.map(row => (
+                                    <Link
+                                        key={row.id}
+                                        href={`/keywords#${row.id}`}
+                                        className="w-8 h-8 flex items-center justify-center bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-xs font-bold text-slate-600 hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm"
+                                    >
+                                        {row.label}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* カテゴリ */}
+                    <div>
+                        <h4 className="text-sm font-bold text-foreground/90 uppercase tracking-wider mb-6">
+                            カテゴリー
+                        </h4>
+                        <nav className="grid grid-cols-2 gap-y-4 gap-x-2">
+                            {[
+                                { name: "動物", slug: "動物" },
+                                { name: "人物", slug: "人物" },
+                                { name: "シチュエーション", slug: "シチュエーション" },
+                                { name: "自然・風景", slug: "自然・風景" },
+                                { name: "食べ物", slug: "食べ物" },
+                                { name: "金運", slug: "金運" },
+                                { name: "体・健康", slug: "体・健康" },
+                                { name: "感情", slug: "感情" },
+                            ].map((cat) => (
+                                <Link
+                                    key={cat.slug}
+                                    href={`/contents/${encodeURIComponent(cat.slug)}`}
+                                    className="text-sm text-slate-500 hover:text-primary transition-colors"
+                                >
+                                    {cat.name}
+                                </Link>
+                            ))}
+                        </nav>
                     </div>
 
                     {/* ガイドナビゲーション */}
@@ -124,8 +177,37 @@ export function Footer() {
                     </div>
                 </div>
 
+                {/* 人気キーワード (横並び) */}
+                <div className="mt-16 pt-8 border-t border-border/30">
+                    <h4 className="text-xs font-bold text-foreground/50 uppercase tracking-widest mb-6 text-center">
+                        注目のキーワード
+                    </h4>
+                    <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
+                        {[
+                            { title: "蛇", cat: "動物", slug: "snake" },
+                            { title: "好きな人", cat: "人物", slug: "crush" },
+                            { title: "追いかけられる", cat: "シチュエーション", slug: "being-chased" },
+                            { title: "火事", cat: "シチュエーション", slug: "fire" },
+                            { title: "空を飛ぶ", cat: "動作", slug: "flying" },
+                            { title: "犬", cat: "動物", slug: "dog" },
+                            { title: "幽霊", cat: "シチュエーション", slug: "ghost" },
+                            { title: "トイレ", cat: "建物・家", slug: "toilet" },
+                            { title: "結婚", cat: "シチュエーション", slug: "marriage" },
+                            { title: "浮気", cat: "シチュエーション", slug: "cheating" },
+                        ].map((word) => (
+                            <Link
+                                key={word.slug}
+                                href={`/contents/${encodeURIComponent(word.cat)}/${word.slug}`}
+                                className="text-xs text-slate-400 hover:text-primary transition-colors"
+                            >
+                                #{word.title}
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+
                 {/* 下部エリア */}
-                <div className="mt-16 pt-8 border-t border-border/30 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div className="mt-12 pt-8 border-t border-border/30 flex flex-col md:flex-row justify-between items-center gap-6">
                     <p className="text-xs text-foreground/40">
                         © {new Date().getFullYear()} {siteConfig.name} All rights reserved.
                     </p>
