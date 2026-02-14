@@ -102,8 +102,8 @@ export default async function ContentPage({ params }: ContentPageProps) {
         ).slice(0, 6);
     }
 
-    if (relatedContents.length < 6 && primaryCategory) {
-        const categoryContents = await getDreamContentsByCategory(primaryCategory);
+    if (relatedContents.length < 6 && category) {
+        const categoryContents = await getDreamContentsByCategory(category);
         const fillers = categoryContents
             .filter(c => c.slug !== slug && !relatedContents.some(r => r.id === c.id))
             .slice(0, 6 - relatedContents.length);
